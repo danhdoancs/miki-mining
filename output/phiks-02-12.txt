@@ -1,0 +1,56 @@
+Training data: 46002
+Training total partitions: 2
+Feature list size: 7357
+@@@@@@@@@@@@@@@ Output ##################
+: Subset size: 22262
+: Subset size: 23740
+@@@@@@@ Job 1: Local miki: [year]
+@@@@@@@ Job 1: Progress Time: 0.61956001 seconds.
+@@@@@@@ Job 1: Local miki: [refer]
+@@@@@@@ Job 1: Progress Time: 0.738040605 seconds.
+@@@@@@@ Job 1: Local miki: [year, refer]
+@@@@@@@ Job 1: Progress Time: 1.126056978 seconds.
+@@@@@@@ Job 1: Local miki: [refer, year]
+@@@@@@@ Job 1: Progress Time: 1.397837477 seconds.
+@@@@@@@ Job 1: Local miki: [year, refer, multiple]
+@@@@@@@ Job 1: Progress Time: 1.760669 seconds.
+@@@@@@@ Job 1: Local miki: [refer, year, film]
+@@@@@@@ Job 1: Progress Time: 2.084446729 seconds.
+@@@@@@@ Job 1: Local miki: [year, refer, multiple, british]
+@@@@@@@ Job 1: Progress Time: 2.421101878 seconds.
+@@@@@@@ Job 1: Local miki: [refer, year, film, list]
+@@@@@@@ Job 1: Progress Time: 2.670821586 seconds.
+@@@@@@@ Job 1: Local miki: [year, refer, multiple, british, article]
+@@@@@@@ Job 1: Progress Time: 3.148239733 seconds.
+@@@@@@@ Job 1: Local miki: [refer, year, film, list, greek]
+@@@@@@@ Job 1: Progress Time: 3.403554396 seconds.
+@@@@@@@ Job 1: Local miki: [year, refer, multiple, british, article, person]
+@@@@@@@ Job 1: Progress Time: 3.910875387 seconds.
+@@@@@@@ Job 1: Local miki: [refer, year, film, list, greek, county]
+@@@@@@@ Job 1: Progress Time: 4.277423366 seconds.
+@@@@@@@ Job 1: Local miki: [year, refer, multiple, british, article, person, film]
+@@@@@@@ Job 1: Progress Time: 4.716248956 seconds.
+@@@@@@@ Job 1: Local miki: [refer, year, film, list, greek, county, british]
+@@@@@@@ Job 1: Progress Time: 5.191975052 seconds.
+@@@@@@@ Job 1: Local miki: [year, refer, multiple, british, article, person, film, united]
+@@@@@@@ Job 1: Progress Time: 5.503310694 seconds.
+@@@@@@@ Job 1: Local miki: [refer, year, film, list, greek, county, british, united]
+@@@@@@@ Job 1: Progress Time: 6.48652327 seconds.
+@@@@@@@ Job 1: Local miki: [year, refer, multiple, british, article, person, film, united, language]
+@@@@@@@ Job 1: Progress Time: 6.995574456 seconds.
+@@@@@@@ Job 1: Local miki: [refer, year, film, list, greek, county, british, united, multiple]
+@@@@@@@ Job 1: Progress Time: 7.58796909 seconds.
+@@@@@@@ Job 1: Local miki: [year, refer, multiple, british, article, person, film, united, language, politics]
+@@@@@@@ Job 1: Progress Time: 9.997455984 seconds.
+@@@@@@@ Job 1: Local miki: [refer, year, film, list, greek, county, british, united, multiple, person]
+@@@@@@@ Job 1: Progress Time: 10.565848338 seconds.
+@@@@@@@ Job 1: Local miki: [year, refer, multiple, british, article, person, film, united, language, politics, list]
+@@@@@@@ Job 1: Progress Time: 19.388419267 seconds.
+@@@@@@@ Job 1: Local miki: [refer, year, film, list, greek, county, british, united, multiple, person, settlement]
+@@@@@@@ Job 1: Progress Time: 19.974847242 seconds.
+@@@@@@@ Job 1: Global miki: Empty
+@@@@@@@ Job 1: Elapsed Time: 101.197663227 seconds.
+!!!!!! Missing candidates: 14692
+@@@@@@@ Job 2: Global miki: ([refer, year, film, list, greek, county, british, united, multiple, person, settlement, article],1.2485049167566187)
+@@@@@@@ Job 2: Elapsed Time: 129.653173299 seconds.
+@@@@@@@ Final miki: ([refer, year, film, list, greek, county, british, united, multiple, person, settlement, article],1.2485049167566187)

@@ -1,0 +1,29 @@
+Training data: 116060
+Training total partitions: 2
+file:///home/ddoan/Projects/java/phiks/datasets/feature_list_03.txt
+Feature list size: 8101
+@@@@@@@@@@@@@@@ Output ##################
+1:@@@@@@@ Current miki: [settlement]
+1:@@@@@@@ Elapsed Time: 4.91622081 seconds.
+2:@@@@@@@ Current miki: [settlement, county]
+2:@@@@@@@ Elapsed Time: 10.833753417 seconds.
+3:@@@@@@@ Current miki: [settlement, county, township]
+3:@@@@@@@ Elapsed Time: 16.03285173 seconds.
+4:@@@@@@@ Current miki: [settlement, county, township, refer]
+4:@@@@@@@ Elapsed Time: 20.687450068 seconds.
+5:@@@@@@@ Current miki: [settlement, county, township, refer, year]
+5:@@@@@@@ Elapsed Time: 26.496190196 seconds.
+6:@@@@@@@ Current miki: [settlement, county, township, refer, year, british]
+6:@@@@@@@ Elapsed Time: 31.089633305 seconds.
+7:@@@@@@@ Current miki: [settlement, county, township, refer, year, british, pennsylvania]
+7:@@@@@@@ Elapsed Time: 35.823537812 seconds.
+8:@@@@@@@ Current miki: [settlement, county, township, refer, year, british, pennsylvania, person]
+8:@@@@@@@ Elapsed Time: 42.194498282 seconds.
+9:@@@@@@@ Current miki: [settlement, county, township, refer, year, british, pennsylvania, person, film]
+9:@@@@@@@ Elapsed Time: 49.269523025 seconds.
+10:@@@@@@@ Current miki: [settlement, county, township, refer, year, british, pennsylvania, person, film, multiple]
+10:@@@@@@@ Elapsed Time: 57.57133744 seconds.
+11:@@@@@@@ Current miki: [settlement, county, township, refer, year, british, pennsylvania, person, film, multiple, list]
+11:@@@@@@@ Elapsed Time: 69.390764555 seconds.
+12:@@@@@@@ Current miki: [settlement, county, township, refer, year, british, pennsylvania, person, film, multiple, list, city]
+12:@@@@@@@ Elapsed Time: 105.759734972 seconds.

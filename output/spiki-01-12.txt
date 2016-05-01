@@ -1,0 +1,29 @@
+Training data: 15529
+Training total partitions: 2
+file:///home/ddoan/Projects/java/phiks/datasets/feature_list_01.txt
+Feature list size: 5542
+@@@@@@@@@@@@@@@ Output ##################
+1:@@@@@@@ Current miki: [refer]
+1:@@@@@@@ Elapsed Time: 1.286829285 seconds.
+2:@@@@@@@ Current miki: [refer, multiple]
+2:@@@@@@@ Elapsed Time: 2.136732733 seconds.
+3:@@@@@@@ Current miki: [refer, multiple, british]
+3:@@@@@@@ Elapsed Time: 2.772502269 seconds.
+4:@@@@@@@ Current miki: [refer, multiple, british, article]
+4:@@@@@@@ Elapsed Time: 3.511254207 seconds.
+5:@@@@@@@ Current miki: [refer, multiple, british, article, person]
+5:@@@@@@@ Elapsed Time: 4.326424236 seconds.
+6:@@@@@@@ Current miki: [refer, multiple, british, article, person, language]
+6:@@@@@@@ Elapsed Time: 5.107888496 seconds.
+7:@@@@@@@ Current miki: [refer, multiple, british, article, person, language, politics]
+7:@@@@@@@ Elapsed Time: 5.964346133 seconds.
+8:@@@@@@@ Current miki: [refer, multiple, british, article, person, language, politics, film]
+8:@@@@@@@ Elapsed Time: 6.739464412 seconds.
+9:@@@@@@@ Current miki: [refer, multiple, british, article, person, language, politics, film, country]
+9:@@@@@@@ Elapsed Time: 7.893356697 seconds.
+10:@@@@@@@ Current miki: [refer, multiple, british, article, person, language, politics, film, country, list]
+10:@@@@@@@ Elapsed Time: 9.566054268 seconds.
+11:@@@@@@@ Current miki: [refer, multiple, british, article, person, language, politics, film, country, list, history]
+11:@@@@@@@ Elapsed Time: 13.238437312 seconds.
+12:@@@@@@@ Current miki: [refer, multiple, british, article, person, language, politics, film, country, list, history, people]
+12:@@@@@@@ Elapsed Time: 22.305176073 seconds.

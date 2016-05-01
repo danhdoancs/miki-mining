@@ -1,0 +1,56 @@
+Training data: 15529
+Training total partitions: 2
+Feature list size: 5542
+@@@@@@@@@@@@@@@ Output ##################
+: Subset size: 7762
+: Subset size: 7767
+@@@@@@@ Job 1: Local miki: [refer]
+@@@@@@@ Job 1: Progress Time: 0.360829023 seconds.
+@@@@@@@ Job 1: Local miki: [refer]
+@@@@@@@ Job 1: Progress Time: 0.416062659 seconds.
+@@@@@@@ Job 1: Local miki: [refer, british]
+@@@@@@@ Job 1: Progress Time: 0.555875649 seconds.
+@@@@@@@ Job 1: Local miki: [refer, multiple]
+@@@@@@@ Job 1: Progress Time: 0.657333496 seconds.
+@@@@@@@ Job 1: Local miki: [refer, british, multiple]
+@@@@@@@ Job 1: Progress Time: 0.778683208 seconds.
+@@@@@@@ Job 1: Local miki: [refer, multiple, article]
+@@@@@@@ Job 1: Progress Time: 0.921252584 seconds.
+@@@@@@@ Job 1: Local miki: [refer, british, multiple, person]
+@@@@@@@ Job 1: Progress Time: 1.04130382 seconds.
+@@@@@@@ Job 1: Local miki: [refer, multiple, article, person]
+@@@@@@@ Job 1: Progress Time: 1.190845228 seconds.
+@@@@@@@ Job 1: Local miki: [refer, british, multiple, person, article]
+@@@@@@@ Job 1: Progress Time: 1.30365792 seconds.
+@@@@@@@ Job 1: Local miki: [refer, multiple, article, person, british]
+@@@@@@@ Job 1: Progress Time: 1.490954799 seconds.
+@@@@@@@ Job 1: Local miki: [refer, british, multiple, person, article, history]
+@@@@@@@ Job 1: Progress Time: 1.791546604 seconds.
+@@@@@@@ Job 1: Local miki: [refer, multiple, article, person, british, politics]
+@@@@@@@ Job 1: Progress Time: 1.966320813 seconds.
+@@@@@@@ Job 1: Local miki: [refer, british, multiple, person, article, history, film]
+@@@@@@@ Job 1: Progress Time: 2.494740723 seconds.
+@@@@@@@ Job 1: Local miki: [refer, multiple, article, person, british, politics, language]
+@@@@@@@ Job 1: Progress Time: 2.576107332 seconds.
+@@@@@@@ Job 1: Local miki: [refer, british, multiple, person, article, history, film, language]
+@@@@@@@ Job 1: Progress Time: 3.153858959 seconds.
+@@@@@@@ Job 1: Local miki: [refer, multiple, article, person, british, politics, language, christian]
+@@@@@@@ Job 1: Progress Time: 3.254419315 seconds.
+@@@@@@@ Job 1: Local miki: [refer, british, multiple, person, article, history, film, language, alternative]
+@@@@@@@ Job 1: Progress Time: 4.304063642 seconds.
+@@@@@@@ Job 1: Local miki: [refer, multiple, article, person, british, politics, language, christian, country]
+@@@@@@@ Job 1: Progress Time: 4.38462233 seconds.
+@@@@@@@ Job 1: Local miki: [refer, british, multiple, person, article, history, film, language, alternative, list]
+@@@@@@@ Job 1: Progress Time: 5.468923574 seconds.
+@@@@@@@ Job 1: Local miki: [refer, multiple, article, person, british, politics, language, christian, country, list]
+@@@@@@@ Job 1: Progress Time: 6.582843116 seconds.
+@@@@@@@ Job 1: Local miki: [refer, british, multiple, person, article, history, film, language, alternative, list, computer]
+@@@@@@@ Job 1: Progress Time: 10.683135016 seconds.
+@@@@@@@ Job 1: Local miki: [refer, multiple, article, person, british, politics, language, christian, country, list, film]
+@@@@@@@ Job 1: Progress Time: 12.874435875 seconds.
+@@@@@@@ Job 1: Global miki: Empty
+@@@@@@@ Job 1: Elapsed Time: 43.339913333 seconds.
+!!!!!! Missing candidates: 11062
+@@@@@@@ Job 2: Global miki: ([refer, multiple, article, person, british, politics, language, christian, country, list, film, history],1.139785073508362)
+@@@@@@@ Job 2: Elapsed Time: 44.18252793166667 seconds.
+@@@@@@@ Final miki: ([refer, multiple, article, person, british, politics, language, christian, country, list, film, history],1.139785073508362)

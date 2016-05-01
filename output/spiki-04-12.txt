@@ -1,0 +1,29 @@
+Training data: 182512
+Training total partitions: 2
+file:///home/ddoan/Projects/java/phiks/datasets/feature_list_04.txt
+Feature list size: 8653
+@@@@@@@@@@@@@@@ Output ##################
+1:@@@@@@@ Current miki: [settlement]
+1:@@@@@@@ Elapsed Time: 8.616816723 seconds.
+2:@@@@@@@ Current miki: [settlement, refer]
+2:@@@@@@@ Elapsed Time: 16.297460006 seconds.
+3:@@@@@@@ Current miki: [settlement, refer, county]
+3:@@@@@@@ Elapsed Time: 24.120428229 seconds.
+4:@@@@@@@ Current miki: [settlement, refer, county, township]
+4:@@@@@@@ Elapsed Time: 32.186683371 seconds.
+5:@@@@@@@ Current miki: [settlement, refer, county, township, british]
+5:@@@@@@@ Elapsed Time: 40.439980929 seconds.
+6:@@@@@@@ Current miki: [settlement, refer, county, township, british, year]
+6:@@@@@@@ Elapsed Time: 50.277369895 seconds.
+7:@@@@@@@ Current miki: [settlement, refer, county, township, british, year, list]
+7:@@@@@@@ Elapsed Time: 58.813261397 seconds.
+8:@@@@@@@ Current miki: [settlement, refer, county, township, british, year, list, person]
+8:@@@@@@@ Elapsed Time: 67.90849323 seconds.
+9:@@@@@@@ Current miki: [settlement, refer, county, township, british, year, list, person, title]
+9:@@@@@@@ Elapsed Time: 76.727127161 seconds.
+10:@@@@@@@ Current miki: [settlement, refer, county, township, british, year, list, person, title, multiple]
+10:@@@@@@@ Elapsed Time: 87.238684524 seconds.
+11:@@@@@@@ Current miki: [settlement, refer, county, township, british, year, list, person, title, multiple, united]
+11:@@@@@@@ Elapsed Time: 106.482269997 seconds.
+12:@@@@@@@ Current miki: [settlement, refer, county, township, british, year, list, person, title, multiple, united, film]
+12:@@@@@@@ Elapsed Time: 146.28502063 seconds.

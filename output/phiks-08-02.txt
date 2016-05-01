@@ -1,0 +1,16 @@
+Training data: 787104
+Training total partitions: 2
+Feature list size: 9242
+@@@@@@@@@@@@@@@ Output ##################
+: Subset size: 391594
+: Subset size: 395510
+@@@@@@@ Job 1: Local miki: [settlement]
+@@@@@@@ Job 1: Progress Time: 7.386495008 seconds.
+@@@@@@@ Job 1: Local miki: [commons]
+@@@@@@@ Job 1: Progress Time: 7.860734408 seconds.
+@@@@@@@ Job 1: Global miki: Empty
+@@@@@@@ Job 1: Elapsed Time: 19.076322242 seconds.
+!!!!!! Missing candidates: 18482
+@@@@@@@ Job 2: Global miki: ([settlement, refer],0.3636148297087777)
+@@@@@@@ Job 2: Elapsed Time: 1408.2802141356667 seconds.
+@@@@@@@ Final miki: ([settlement, refer],0.3636148297087777)

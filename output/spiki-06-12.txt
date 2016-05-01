@@ -1,0 +1,29 @@
+Training data: 787104
+Training total partitions: 2
+file:///home/ddoan/Projects/java/phiks/datasets/feature_list_06.txt
+Feature list size: 9242
+@@@@@@@@@@@@@@@ Output ##################
+1:@@@@@@@ Current miki: [settlement]
+1:@@@@@@@ Elapsed Time: 49.024363043 seconds.
+2:@@@@@@@ Current miki: [settlement, refer]
+2:@@@@@@@ Elapsed Time: 78.864050783 seconds.
+3:@@@@@@@ Current miki: [settlement, refer, county]
+3:@@@@@@@ Elapsed Time: 142.167079283 seconds.
+4:@@@@@@@ Current miki: [settlement, refer, county, list]
+4:@@@@@@@ Elapsed Time: 205.610669937 seconds.
+5:@@@@@@@ Current miki: [settlement, refer, county, list, commons]
+5:@@@@@@@ Elapsed Time: 265.962386786 seconds.
+6:@@@@@@@ Current miki: [settlement, refer, county, list, commons, british]
+6:@@@@@@@ Elapsed Time: 326.017839657 seconds.
+7:@@@@@@@ Current miki: [settlement, refer, county, list, commons, british, person]
+7:@@@@@@@ Elapsed Time: 355.78255443 seconds.
+8:@@@@@@@ Current miki: [settlement, refer, county, list, commons, british, person, title]
+8:@@@@@@@ Elapsed Time: 423.872431632 seconds.
+9:@@@@@@@ Current miki: [settlement, refer, county, list, commons, british, person, title, united]
+9:@@@@@@@ Elapsed Time: 494.941729252 seconds.
+10:@@@@@@@ Current miki: [settlement, refer, county, list, commons, british, person, title, united, multiple]
+10:@@@@@@@ Elapsed Time: 560.521762855 seconds.
+11:@@@@@@@ Current miki: [settlement, refer, county, list, commons, british, person, title, united, multiple, album]
+11:@@@@@@@ Elapsed Time: 635.275070168 seconds.
+12:@@@@@@@ Current miki: [settlement, refer, county, list, commons, british, person, title, united, multiple, album, artist]
+12:@@@@@@@ Elapsed Time: 703.682502328 seconds.

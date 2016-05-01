@@ -1,0 +1,29 @@
+Training data: 46002
+Training total partitions: 2
+file:///home/ddoan/Projects/java/phiks/datasets/feature_list_02.txt
+Feature list size: 7357
+@@@@@@@@@@@@@@@ Output ##################
+1:@@@@@@@ Current miki: [year]
+1:@@@@@@@ Elapsed Time: 2.513623012 seconds.
+2:@@@@@@@ Current miki: [year, refer]
+2:@@@@@@@ Elapsed Time: 4.572612493 seconds.
+3:@@@@@@@ Current miki: [year, refer, british]
+3:@@@@@@@ Elapsed Time: 6.994202828 seconds.
+4:@@@@@@@ Current miki: [year, refer, british, multiple]
+4:@@@@@@@ Elapsed Time: 9.132574007 seconds.
+5:@@@@@@@ Current miki: [year, refer, british, multiple, film]
+5:@@@@@@@ Elapsed Time: 11.130705686 seconds.
+6:@@@@@@@ Current miki: [year, refer, british, multiple, film, person]
+6:@@@@@@@ Elapsed Time: 13.690139949 seconds.
+7:@@@@@@@ Current miki: [year, refer, british, multiple, film, person, list]
+7:@@@@@@@ Elapsed Time: 15.653526095 seconds.
+8:@@@@@@@ Current miki: [year, refer, british, multiple, film, person, list, article]
+8:@@@@@@@ Elapsed Time: 17.821023739 seconds.
+9:@@@@@@@ Current miki: [year, refer, british, multiple, film, person, list, article, united]
+9:@@@@@@@ Elapsed Time: 21.223403505 seconds.
+10:@@@@@@@ Current miki: [year, refer, british, multiple, film, person, list, article, united, title]
+10:@@@@@@@ Elapsed Time: 25.230050949 seconds.
+11:@@@@@@@ Current miki: [year, refer, british, multiple, film, person, list, article, united, title, greek]
+11:@@@@@@@ Elapsed Time: 31.158487672 seconds.
+12:@@@@@@@ Current miki: [year, refer, british, multiple, film, person, list, article, united, title, greek, settlement]
+12:@@@@@@@ Elapsed Time: 44.775747241 seconds.
