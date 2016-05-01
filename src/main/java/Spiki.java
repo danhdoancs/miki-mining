@@ -109,13 +109,13 @@ public class Spiki implements Serializable {
 						Tuple2<Map.Entry<String,List<String>>,Integer> pair = new Tuple2<Map.Entry<String,List<String>>,Integer>(key,1);
 						result.add(pair);	
 					}
-
+					
 					return result;	
 				}
 			};
 
 			JavaPairRDD<Map.Entry<String,List<String>>,Integer> projections = data.flatMapToPair(pairMapper).reduceByKey((a,b) -> a+b);
-			//System.out.println("a = " + projections.collect().toString());
+			//System.out.println("projections = " + projections.collect().toString());
 			
 			for (Map.Entry prjEntry : projections.collectAsMap().entrySet()) {
 				Map.Entry<String,List<String>> prjKey = (Map.Entry<String,List<String>>)prjEntry.getKey();
@@ -132,7 +132,7 @@ public class Spiki implements Serializable {
 			// Get freqency of feature.0 projections end 0
 			// p.0 = p - p.1
 			updateFeatureMaps(featureMaps, mikiMap, N);
-			//System.out.println(t+": feature maps: " + featureMaps.toString());
+			System.out.println(t+": feature maps: " + featureMaps.toString());
 			//System.out.println("before miki: " + currentMiki.toString());
 			mikiMap = updateCurrentMiki(featureMaps, currentMiki, N);
 			// End timer

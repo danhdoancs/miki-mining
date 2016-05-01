@@ -26,13 +26,13 @@ import java.io.FileWriter;
 
 public class Phiks implements Serializable {
 
-	JavaRDD<Transaction> data;
-	Features featureList;
+	JavaRDD<List<String>> data;
+	List<String> featureList;
 	int N;
 	long Fsize;	
 	int k;
 	long startTime;
-	
+
 	Phiks(String dataFile, String featureFile, int k) {
 		String dataPath = "file:///home/ddoan/Projects/java/phiks/datasets/";
 		//String dataset = "hdfs://doan1.cs.ou.edu:9000/user/hduser/phiks/in/" + dataFile;
@@ -45,9 +45,9 @@ public class Phiks implements Serializable {
 		SQLContext sqlContext = new SQLContext(sc);
 
 		// Load training data from HDFS
-		Function<String, Transaction> spliter = new Function<String, Transaction>() {
-			public Transaction call(String s) {
-				return new Transaction(Arrays.asList(s.split(" ")));
+		Function<String, List<String>> spliter = new Function<String, List<String>>() {
+			public List<String> call(String s) {
+				return Arrays.asList(s.split(" "));
 			}
 		};
 		data = sc.textFile(dataset).map(spliter).cache();
@@ -57,7 +57,7 @@ public class Phiks implements Serializable {
 
 		// Load feature list from HDFS
 		//System.out.println(featureListFile);
-		featureList = new Features(sc.textFile(featureListFile).toArray());
+		featureList = new ArrayList<>(sc.textFile(featureListFile).toArray());
 		// Size features
 		Fsize = featureList.size();
 		System.out.println("Feature list size: " + Fsize);
@@ -65,24 +65,27 @@ public class Phiks implements Serializable {
 		this.k = k;
 	}
 
-	Itemset run() {
+	List<String> run() {
 		// Check k size
 		if (k < 1 || k >= Fsize) {
 			System.err.println("K value is invalid. 0 < k < featureSize");
 			return null;
 		}
+
 		// Miki
-		ItemEnt miki;
+		Tuple2<List<String>,Double> miki;
+		//Broadcast<List<String>> bcFeatureList = sc.broadcast(featureList);
 		System.out.println("@@@@@@@@@@@@@@@ Output ##################");
+
 		Tuple2 result = runJob1();
-		ItemEnt job1Miki = (ItemEnt)result._1();
+		Tuple2 job1Miki = (Tuple2)result._1();
 		//System.out.println("@@@@@@ Job 1 Miki: " + job1Miki.toString());
 		List<List<String>> missingCandidates = (List<List<String>>)result._2();
 		System.out.println("!!!!!! Missing candidates: " + missingCandidates.size());
 		System.out.println("!!!!! Missing candidates: " + missingCandidates.toString());
 		// Run job 2 to re calculate the missing candidates' entropy
 		if (!missingCandidates.isEmpty()) {
-			//miki = runJob2(missingCandidates, job1Miki);
+			miki = runJob2(missingCandidates, job1Miki);
 		} else {
 			miki = job1Miki;
 		}
@@ -90,7 +93,6 @@ public class Phiks implements Serializable {
 	}
 
 	// Job 2
-	/*
 	Tuple2 runJob2(List<List<String>> missingCandidates, Tuple2<List,Double> job1Miki) {
 		Tuple2<List,Double> job2Miki = data.flatMapToPair(tran -> {
 				// Init empty result projections
@@ -153,61 +155,61 @@ public class Phiks implements Serializable {
 		System.out.println("@@@@@@@ Final miki: " + miki.toString());
 		return miki;
 	}
-*/
+
 
 	// Job 1
-	Tuple2<ItemEnt,Itemsets> runJob1() {
+	Tuple2<Tuple2<List<String>,Double>,List<List<String>>> runJob1() {
 		// Start timer
 		startTime = System.nanoTime();
 		// Work on each partition
-		JavaRDD<ItemProj_Freq> projections = data.mapPartitions(new FlatMapFunction<Iterator<Transaction>,ItemProj_Freq>() {
-				public Iterable<ItemProj_Freq> call(Iterator<Transaction> tranIt) {
+		JavaRDD<Tuple2<Map.Entry<List<String>,List<String>>,Integer>> projections = data.mapPartitions(new FlatMapFunction<Iterator<List<String>>, Tuple2<Map.Entry<List<String>,List<String>>,Integer>>() {
+				public Iterable<Tuple2<Map.Entry<List<String>,List<String>>,Integer>> call(Iterator<List<String>> tranIt) {
 					// Cache partition into memory as ArrayList
-					List<Transaction> subset = Lists.newArrayList(tranIt);
+					List<List<String>> subset = Lists.newArrayList(tranIt);
 					int localN = subset.size();
 					System.out.println(": Subset size: " + subset.size());
 					// Init result pair 
-					List<ItemProj_Freq> result = new ArrayList<>();
+					List<Tuple2<Map.Entry<List<String>,List<String>>,Integer>> result = new ArrayList<>();
 					// Init 2 core variables to keep track of local miki
 					// Current MIKI
-					Itemset localMiki = new Itemset();
+					List<String> localMiki = new ArrayList<>();
 					// Init miki map	
-					Map<Projection,Integer> mikiMap = new LinkedHashMap<>();
-					mikiMap.put(new Projection(), 0);
+					Map<List<String>,Integer> mikiMap = new LinkedHashMap<>();
+					mikiMap.put(new ArrayList<String>(), 0);
 					// Loop k times to find local MIKI
 					for (int t=1; t<=k; t++) {
 					// Get remain features;
-					Features remainFeatures = getRemainFeatures(localMiki, featureList);
+					List<String> remainFeatures = getRemainFeatures(localMiki, featureList);
 					//System.out.println(t+": Remain features: " + remainFeatures);
 					// Get candidate set
-					Itemsets candidates = getCandidates(remainFeatures, localMiki);	
+					List<List<String>> candidates = getCandidates(remainFeatures, localMiki);	
 					//System.out.println(t+": Candidates: " + candidates.toString());
 					// Generate feature maps
-					FeatureMaps featureMaps = generateFeatureMaps(remainFeatures, mikiMap);
+					Map<String,Map<List<String>,Integer>> featureMaps = generateFeatureMaps(remainFeatures, mikiMap);
 					//System.out.println(t+": Feature maps: " + featureMaps.toString());
 					// Scan the data split
 					// For each transaction T, get S = T intesect F/X
-					for (Transaction tran : subset) {
+					for (List<String> tran : subset) {
 						// Get S = T intersect F-X 	
 						// Find S = transaction Intersect remainingFeatures
-						Features S = intersection(tran, remainFeatures); 
+						List<String> S = intersection(tran, remainFeatures); 
 						//System.out.println(": Transaction: " + tran.toString());
 						//System.out.println(": S " + S.toString());
 						// Find projection of current miki on T
-						Projection mikiProj = intersection(tran, localMiki);
+						List<String> mikiProj = intersection(tran, localMiki);
 						//System.out.println(": Miki proj: " + mikiProj.toString());
 						// Increase frequency of projections
 						for (String item : S) {
 							// Create feature key 
-							Projection key = new Projection();
+							List<String> key = new ArrayList<>();
 							key.add(item);
 							// Retrieve the projection pair of feature
-							Projection projKey = new Projection(mikiProj);
+							List<String> projKey = new ArrayList<>(mikiProj);
 							projKey.add(item);
 							// Retrieve the feature map
-							FeatureMap featureMap = featureMaps.get(item);
+							Map<List<String>,Integer> featureMap = featureMaps.get(item);
 							// Increase frequency
-							Integer projValue = featureMap.get(projKey) == null ? 0 : featureMap.get(projKey);
+							int projValue = featureMap.get(projKey) == null ? 0 : featureMap.get(projKey);
 							featureMap.put(projKey,projValue + 1);
 							//System.out.println(featureMaps.get(item).toString());
 						}
@@ -305,13 +307,13 @@ public class Phiks implements Serializable {
 		// Work on reducer
 		// Get missing candidates
 		JavaPairRDD missingCandidatesPairRdd = entropies.filter(a -> (Double)((Tuple2)a)._2() < 0);
-		JavaRDD<Itemset> missingCandidatesRdd = missingCandidatesPairRdd.keys();
-		Itemsets missingCandidates = missingCandidatesRdd.collect();
+		JavaRDD<List<String>> missingCandidatesRdd = missingCandidatesPairRdd.keys();
+		List<List<String>> missingCandidates = missingCandidatesRdd.collect();
 		// Get the global MIKI
 		JavaPairRDD filteredCandidates = entropies.filter(a -> (Double)((Tuple2)a)._2() > -1);
-		ItemEnt miki = null;
+		Tuple2 miki = null;
 		if (filteredCandidates.count() > 0) {
-				miki = (ItemEnt)filteredCandidates.reduce((a,b) -> {
+				miki = (Tuple2)filteredCandidates.reduce((a,b) -> {
 				Tuple2<List<String>,Double> tupA = (Tuple2<List<String>,Double>)a;
 				Tuple2<List<String>,Double> tupB = (Tuple2<List<String>,Double>)b;
 				return tupA._2() > tupB._2() ? tupA : tupB;
@@ -328,7 +330,7 @@ public class Phiks implements Serializable {
 		double elapsedSeconds = (double)elapsedTime / 1000000000.0;
 		System.out.println("@@@@@@@ Job 1: Global miki: " + (miki != null ? miki.toString() : "Empty"));
 		System.out.println("@@@@@@@ Job 1: Elapsed Time: " + elapsedSeconds + " seconds.");
-		return new Tuple2<ItemEnt,Itemsets>(miki, missingCandidates);
+		return new Tuple2<Tuple2<List<String>,Double>,List<List<String>>>(miki, missingCandidates);
 	}
 
 	// compute upper bound entropy
@@ -430,7 +432,7 @@ public class Phiks implements Serializable {
 		return entropy;
 	}
 
-	void updateFeatureMaps(FeatureMaps featureMaps, Featuremap mikiMap, int splitSize) {
+	void updateFeatureMaps(Map<String,Map<List<String>,Integer>> featureMaps, Map<List<String>,Integer> mikiMap, int splitSize) {
 		if (featureMaps == null) {
 			System.err.println("ERROR: feature maps is null");
 			return; 
@@ -441,7 +443,7 @@ public class Phiks implements Serializable {
 		}
 
 		for (Map.Entry entry : featureMaps.entrySet()) {
-			FeatureMap featureMap = (FeatureMap) entry.getValue(); 
+			Map<List<String>,Integer> featureMap = (Map<List<String>,Integer>) entry.getValue(); 
 			String feature = (String) entry.getKey();
 			int idx = 0;
 			// Loop throuh projection of current miki
@@ -450,9 +452,9 @@ public class Phiks implements Serializable {
 				if (idx++ % 2 != 0) 
 					continue;
 				// Keys for p.1
-				Projection projKey1 = (Projection) projEntry.getKey(); 
+				List<String> projKey1 = (List<String>) projEntry.getKey(); 
 				// Key for p.0
-				Projection projKey0 = new Projection(projKey1);
+				List<String> projKey0 = new ArrayList<>(projKey1);
 				projKey0.remove(feature);
 				// Check if projKey0 is valid or not
 				// If not, skip
@@ -479,15 +481,15 @@ public class Phiks implements Serializable {
 		}
 	}
 
-	FeatureMaps generateFeatureMaps(Features remainFeatures, FeatureMap mikiMap) {
-		FeatureMaps maps = new FeatureMaps();
+	Map<String,Map<List<String>,Integer>> generateFeatureMaps(List<String> remainFeatures, Map<List<String>,Integer> mikiMap) {
+		Map<String,Map<List<String>, Integer>> maps = new LinkedHashMap<>();
 		for (String feature : remainFeatures) {
-			FeatureMap map = new FeatureMap();
+			Map<List<String>,Integer> map = new LinkedHashMap<>();
 			// Generate candidate's projections
-			for (Projection proj : mikiMap.keySet()) {
+			for (List<String> proj : mikiMap.keySet()) {
 				//System.out.println("miki proj: " + proj.toString());
 				// Add current miki projection with end .1 by item s
-				Projection newProj = new Projection(proj);
+				List<String> newProj = new ArrayList<>(proj);
 				newProj.add(feature);
 				map.put(newProj, 0);
 				// Add current miki projection with end .0 by item s into hash map of s
@@ -501,9 +503,9 @@ public class Phiks implements Serializable {
 		return maps;
 	}
 
-	Features getRemainFeatures(Itemset localMiki, Features featureList) {
+	List<String> getRemainFeatures(List<String> localMiki, List<String> featureList) {
 		// Get remain features 
-		Features remainFeatures = new Features();
+		List<String> remainFeatures = new ArrayList<>();
 		for (String feature : featureList) {
 			if (!localMiki.contains(feature)) {
 				remainFeatures.add(feature);	
@@ -512,11 +514,11 @@ public class Phiks implements Serializable {
 		return remainFeatures;
 	}
 
-	Itemsets getCandidates(Features remainFeatures, Itemset localMiki) {
+	List<List<String>> getCandidates(List<String> remainFeatures, List<String> localMiki) {
 		// Combine each remain feature with current miki to create new candidate
-		Itemsets candidates = new Itemsets();
+		List<List<String>> candidates = new ArrayList<>();
 		for (String feature : remainFeatures) {
-			Itemset candidate = new Itemset(localMiki);
+			List<String> candidate = new ArrayList<>(localMiki);
 			candidate.add(feature);
 			candidates.add(candidate);
 		}
@@ -531,6 +533,7 @@ public class Phiks implements Serializable {
 				list.add(t);
 			}
 		}
+
 		return list;
 	}
 
@@ -542,5 +545,17 @@ public class Phiks implements Serializable {
 			}
 		}
 		return list;
+	}
+
+	void writeItemsetListToFile(List<List<String>> itemsetList, String path) throws Exception {
+		FileWriter writer = new FileWriter(path); 
+		for(List<String> itemset: itemsetList) {
+			String line = "";
+			for(String item : itemset) {
+				line += item + " ";
+			}
+			writer.write(line.trim() + "\n");
+		}
+		writer.close();
 	}
 }
