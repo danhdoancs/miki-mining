@@ -47,7 +47,7 @@ public class Spiki implements Serializable {
 		System.out.println("Training total partitions: " + data.getNumPartitions());
 
 		// Load feature list from HDFS
-		System.out.println(featureListFile);
+		//System.out.println(featureListFile);
 		featureList = new ArrayList<>(sc.textFile(featureListFile).toArray());
 		// Size features
 		Fsize = featureList.size();
@@ -132,7 +132,7 @@ public class Spiki implements Serializable {
 			// Get freqency of feature.0 projections end 0
 			// p.0 = p - p.1
 			updateFeatureMaps(featureMaps, mikiMap, N);
-			System.out.println(t+": feature maps: " + featureMaps.toString());
+			//System.out.println(t+": feature maps: " + featureMaps.toString());
 			//System.out.println("before miki: " + currentMiki.toString());
 			mikiMap = updateCurrentMiki(featureMaps, currentMiki, N);
 			// End timer

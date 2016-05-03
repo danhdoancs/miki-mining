@@ -19,6 +19,7 @@ import java.util.LinkedHashSet;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.LinkedHashMap;
+import java.util.HashMap;
 import java.util.AbstractMap;
 import scala.Tuple2;
 
@@ -27,8 +28,8 @@ import java.io.FileWriter;
 
 public class Phiks implements Serializable {
 
-	JavaRDD<Transaction> data;
-	Features featureList;
+	JavaRDD<Itemset> data;
+	Itemset featureList;
 	int N;
 	long Fsize;	
 	int k;
@@ -46,9 +47,9 @@ public class Phiks implements Serializable {
 		SQLContext sqlContext = new SQLContext(sc);
 
 		// Load training data from HDFS
-		Function<String, Transaction> spliter = new Function<String, Transaction>() {
-			public Transaction call(String s) {
-				return new Transaction(Arrays.asList(s.split(" ")));
+		Function<String, Itemset> spliter = new Function<String, Itemset>() {
+			public Itemset call(String s) {
+				return new Itemset(Arrays.asList(s.split(" ")));
 			}
 		};
 		data = sc.textFile(dataset).map(spliter).cache();
@@ -58,17 +59,13 @@ public class Phiks implements Serializable {
 
 		// Load feature list from HDFS
 		//System.out.println(featureListFile);
-		featureList = new Features(sc.textFile(featureListFile).toArray());
+		featureList = new Itemset(sc.textFile(featureListFile).toArray());
 		// Size features
 		Fsize = featureList.size();
 		System.out.println("Feature list size: " + Fsize);
 		// Init k
 		this.k = k;
 	}
-	void run() {
-		runJob1();
-	}
-/*
 	Itemset run() {
 		// Check k size
 		if (k < 1 || k >= Fsize) {
@@ -76,99 +73,100 @@ public class Phiks implements Serializable {
 			return null;
 		}
 		// Miki
-		ItemEnt miki;
+		ItemEnt miki = null;
 		System.out.println("@@@@@@@@@@@@@@@ Output ##################");
 		Tuple2 result = runJob1();
 		ItemEnt job1Miki = (ItemEnt)result._1();
 		//System.out.println("@@@@@@ Job 1 Miki: " + job1Miki.toString());
-		List<List<String>> missingCandidates = (List<List<String>>)result._2();
-		System.out.println("!!!!!! Missing candidates: " + missingCandidates.size());
-		System.out.println("!!!!! Missing candidates: " + missingCandidates.toString());
+		Itemsets missingCandidates = (Itemsets)result._2();
+		//System.out.println("!!!!! Missing candidates: " + missingCandidates.toString());
 		// Run job 2 to re calculate the missing candidates' entropy
 		if (!missingCandidates.isEmpty()) {
-			//miki = runJob2(missingCandidates, job1Miki);
+			miki = runJob2(missingCandidates, job1Miki);
 		} else {
 			miki = job1Miki;
 		}
 		return miki._1();
 	}
-	*/
 
 	// Job 2
-	/*
-	Tuple2 runJob2(List<List<String>> missingCandidates, Tuple2<List,Double> job1Miki) {
-		Tuple2<List,Double> job2Miki = data.flatMapToPair(tran -> {
+	ItemEnt runJob2(Itemsets missingCandidates, ItemEnt job1Miki) {
+		Tuple2<Itemset,Double> job2MikiTup = data.flatMapToPair(tran -> {
 				// Init empty result projections
-				List<Tuple2<Tuple2,Integer>> projs = new ArrayList<>();
+				List<Tuple2<Projection,Integer>> projs = new ArrayList<>();
 				// Get projection of each missing candidate
-				for (List<String> cand : missingCandidates) {
-					List<String> proj = intersection(tran, cand);
-					Tuple2 tupKey = new Tuple2(cand, proj);
-					Tuple2<Tuple2,Integer> tup = new Tuple2(tupKey, 1);
+				for (Itemset cand : missingCandidates) {
+					Itemset proj = intersect(tran, cand);
+					Projection tupKey = new Projection(cand, proj);
+					ItemProj_Freq tup = new ItemProj_Freq(tupKey, 1);
 					projs.add(tup);
 				}
 				return projs;
-		})
+		})	
+
 		// Sum all frequency of each projeciton	of each candidate
-		.reduceByKey((a,b) -> a+b)	
+		.reduceByKey((a,b) -> a+b)
 		// Combine all projections for each candidate
 		// Transform key value format
 		.mapToPair(tup -> {
-				Tuple2 tupKey = (Tuple2)tup._1();
-				List<String> resultKey = (List<String>)tupKey._1();
-				Tuple2<List<String>,Integer> resultValue = new Tuple2(tupKey._2(), tup._2());
-				List<Tuple2> resultValues = new ArrayList<>();
+				Projection tupKey = (Projection)tup._1();
+				Itemset resultKey = (Itemset)tupKey._1();
+				ProjFreq resultValue = new ProjFreq(tupKey._2(), tup._2());
+				List<ProjFreq> resultValues = new ArrayList<>();
 				resultValues.add(resultValue);
-				return new Tuple2<List,List>(resultKey,resultValues);
+				return new Item_ProjFreqs(resultKey,resultValues);
 		})
 		// Combien projecitons
 		.reduceByKey((a,b) -> {
-			List listA = (List)a;
-			List listB = (List)b;
+			List<ProjFreq> listA = (List<ProjFreq>)a;
+			List<ProjFreq> listB = (List<ProjFreq>)b;
 			listA.addAll(listB);
 			return listA;
 		})
+
 		// Compute entropy
 		.mapToPair(tup -> {
-			List cand = (List)tup._1();
-			List<Tuple2> projs = (List)tup._2();
+			Itemset cand = (Itemset)tup._1();
+			List<ProjFreq> projs = (List)tup._2();
 			
 			double entropy = 0.0;
-			for (Tuple2 proj : projs) {
+			for (ProjFreq proj : projs) {
 				int freq = (int)proj._2();
 				double prob = (double)freq/N;
 				entropy -= prob*Math.log(prob);
 			}
-			return new Tuple2<List,Double>(cand, entropy);
+			return new ItemEnt(cand, entropy);
 		})
 		// Get the global MIKI
 		.reduce((a,b) -> {
-			Tuple2<List,Double> tupA = (Tuple2<List,Double>)a;
-			Tuple2<List,Double> tupB = (Tuple2<List,Double>)b;
+			ItemEnt tupA = (ItemEnt)a;
+			ItemEnt tupB = (ItemEnt)b;
 			return tupA._2() > tupB._2() ? tupA : tupB;
 		});
-		
+			
 		// Select miki from job1 and job2
-		Tuple2 miki = job1Miki != null && job1Miki._2() > job2Miki._2() ? job1Miki : job2Miki;
+		ItemEnt job2Miki = new ItemEnt(job2MikiTup);
+		ItemEnt miki = job1Miki != null && job1Miki._2() > job2Miki._2() ? job1Miki : job2Miki;
+
 		// End timer
 		long elapsedTime = System.nanoTime() - startTime;
-		double elapsedSeconds = (double)elapsedTime / 3000000000.0;
+		double elapsedSeconds = (double)elapsedTime / 1000000000.0;
 		System.out.println("@@@@@@@ Job 2: Global miki: " + job2Miki.toString());
 		System.out.println("@@@@@@@ Job 2: Elapsed Time: " + elapsedSeconds + " seconds.");
 		System.out.println("@@@@@@@ Final miki: " + miki.toString());
 		return miki;
 	}
-*/
 
 	// Job 1
-	void runJob1() {
+	Tuple2<ItemEnt,Itemsets> runJob1() {
 		// Start timer
 		startTime = System.nanoTime();
 		// Work on each partition
-		JavaRDD<ItemProj_Freq> projections = data.mapPartitions(new FlatMapFunction<Iterator<Transaction>,ItemProj_Freq>() {
-				public Iterable<ItemProj_Freq> call(Iterator<Transaction> tranIt) {
+		JavaRDD<ItemProj_Freq> projections = data.mapPartitions(new FlatMapFunction<Iterator<Itemset>,ItemProj_Freq>() {
+				public Iterable<ItemProj_Freq> call(Iterator<Itemset> tranIt) {
+		
 					// Cache partition into memory as ArrayList
-					List<Transaction> subset = Lists.newArrayList(tranIt);
+					List<Itemset> subset = Lists.newArrayList(tranIt);
 					int localN = subset.size();
 					System.out.println(": Subset size: " + subset.size());
 
@@ -179,36 +177,37 @@ public class Phiks implements Serializable {
 					Itemset localMiki = new Itemset();
 					// Init miki map	
 					FeatureMap mikiMap = new FeatureMap();
-					mikiMap.put(new Projection(), 0);
+					mikiMap.put(new Itemset(), 0);
 					// Loop k times to find local MIKI
 					for (int t=1; t<=k; t++) {
 					// Get remain features;
-					Features remainFeatures = getRemainFeatures(localMiki, featureList);
-					//System.out.println(t+": Remain features: " + remainFeatures);
+					Itemset remainItemset = getRemainItemset(localMiki, featureList);
+					//System.out.println(t+": Remain features: " + remainItemset);
 					// Get candidate set
-					Itemsets candidates = getCandidates(remainFeatures, localMiki);	
+					Itemsets candidates = getCandidates(remainItemset, localMiki);	
 					//System.out.println(t+": Candidates: " + candidates.toString());
 					// Generate feature maps
-					FeatureMaps featureMaps = generateFeatureMaps(remainFeatures, mikiMap);
+					FeatureMaps featureMaps = generateFeatureMaps(remainItemset, mikiMap);
 					//System.out.println(t+": Feature maps: " + featureMaps.toString());
+
 					// Scan the data split
 					// For each transaction T, get S = T intesect F/X
-					for (Transaction tran : subset) {
+					for (Itemset tran : subset) {
 						// Get S = T intersect F-X 	
-						// Find S = transaction Intersect remainingFeatures
-						Features S = (Features)intersect(tran, remainFeatures); 
-						//System.out.println(": Transaction: " + tran.toString());
-						//System.out.println(": S " + S.toString());
+						// Find S = transaction Intersect remainingItemset
+						Itemset S = (Itemset)intersect(tran, remainItemset); 
+						//System.out.println(t+": Transaction: " + tran.toString());
+						//System.out.println(t+": S " + S.toString());
 						// Find projection of current miki on T
-						Projection mikiProj = (Projection)intersect(tran, localMiki);
+						Itemset mikiProj = (Itemset)intersect(tran, localMiki);
 						//System.out.println(": Miki proj: " + mikiProj.toString());
 						// Increase frequency of projections
 						for (String item : S) {
 							// Create feature key 
-							Projection key = new Projection();
+							Itemset key = new Itemset();
 							key.add(item);
 							// Retrieve the projection pair of feature
-							Projection projKey = new Projection(mikiProj);
+							Itemset projKey = new Itemset(mikiProj);
 							projKey.add(item);
 							// Retrieve the feature map
 							FeatureMap featureMap = featureMaps.get(item);
@@ -222,7 +221,8 @@ public class Phiks implements Serializable {
 					// Get freqency of feature.0 projections end 0
 					// p.0 = p - p.1
 					updateFeatureMaps(featureMaps, mikiMap, localN);
-					//System.out.println(t+": feature maps: " + featureMaps.toString());
+					
+					//System.out.println(t+": Feature maps: " + featureMaps.toString());
 					//System.out.println("before miki: " + localMiki.toString());
 					if (t < k) {
 						mikiMap = updateCurrentMiki(featureMaps, localMiki, localN);
@@ -242,13 +242,13 @@ public class Phiks implements Serializable {
 						candidate.add(feature);
 						// Loop through each projection of candidate in feature map
 						for (Map.Entry projEntry : featureMap.entrySet()) {
-							Projection projKey = (Projection) projEntry.getKey();
+							Itemset projKey = (Itemset) projEntry.getKey();
 							int projValue = (int) projEntry.getValue();
 							// Skip projection with 0 frequency
 							if (projValue == 0)
 								continue;
 							// Add into result
-							ItemProj resultKey = new ItemProj(candidate,projKey);
+							Projection resultKey = new Projection(candidate,projKey);
 							ItemProj_Freq resultPair = new ItemProj_Freq(resultKey,projValue);
 							result.add(resultPair);   
 						}
@@ -258,20 +258,19 @@ public class Phiks implements Serializable {
 					return result;
 			} // End FlatMapFunction
 		}); // End map fucntion
-		/*
 		//System.out.println(projections.collect().toString());
-		JavaPairRDD pairProj = projections.mapToPair(new PairFunction<ItemProj_Freq, ItemProj, Integer>() {
+		JavaPairRDD pairProj = projections.mapToPair(new PairFunction<ItemProj_Freq, Projection, Integer>() {
 			public ItemProj_Freq call(ItemProj_Freq tup) {
 				return tup;
 			}
 		}).reduceByKey((a,b) -> a+b);	
 		// Reduce
-		// Combine to <Candidate, [Projection -> Frequency]>
-		JavaPairRDD combinedProj = pairProj.mapToPair(new PairFunction<ItemProj_Freq, Itemset, List<ProjFreq>>() {
-			public Item_ProjFreqs call(ItemProj_Freq tup) {
-				ItemProj tupKey = (ItemProj)tup._1();
+		// Combine to <Candidate, [Itemset -> Frequency]>
+		JavaPairRDD combinedProj = pairProj.mapToPair(new PairFunction<Tuple2, Itemset, List<ProjFreq>>() {
+			public Item_ProjFreqs call(Tuple2 tup) {
+				Projection tupKey = (Projection)tup._1();
 				Itemset resultKey = (Itemset)tupKey._1();
-				ProjFreq resultValue = new ProjFreq(tupKey._2(), tup._2());
+				ProjFreq resultValue = new ProjFreq(tupKey._2(), (Integer)tup._2());
 				List<ProjFreq> resultValues = new ArrayList<>();
 				resultValues.add(resultValue);
 				return new Item_ProjFreqs(resultKey,resultValues);
@@ -282,11 +281,11 @@ public class Phiks implements Serializable {
 			listA.addAll(listB);
 			return listA;
 		});
-
+		
 		//System.out.println(combinedProj.collect().toString());
 		// Compute entropy or -1 if missing projection
-		JavaPairRDD entropies = combinedProj.mapToPair(new PairFunction<Item_ProjFreqs, Itemset, Double>() {
-			public ItemEnt call(Item_ProjFreqs tup) {
+		JavaPairRDD entropies = combinedProj.mapToPair(new PairFunction<Tuple2, Itemset, Double>() {
+			public ItemEnt call(Tuple2 tup) {
 				Itemset candidate = (Itemset)tup._1();
 				List<ProjFreq> projs = (List<ProjFreq>)tup._2();
 				double entropy = 0.0;
@@ -308,60 +307,62 @@ public class Phiks implements Serializable {
 				return new ItemEnt(candidate, entropy);
 			}
 		});
-		
+
 		// Work on reducer
+
 		// Get missing candidates
 		JavaPairRDD missingCandidatesPairRdd = entropies.filter(a -> (Double)((Tuple2)a)._2() < 0);
 		JavaRDD<Itemset> missingCandidatesRdd = missingCandidatesPairRdd.keys();
-		Itemsets missingCandidates = (Itemsets)missingCandidatesRdd.collect();
+		Itemsets missingCandidates = new Itemsets(missingCandidatesRdd.take((int)Math.pow(10,k)));
 		// Get the global MIKI
 		JavaPairRDD filteredCandidates = entropies.filter(a -> (Double)((Tuple2)a)._2() > -1);
 		ItemEnt miki = null;
 		if (filteredCandidates.count() > 0) {
-				miki = (ItemEnt)filteredCandidates.reduce((a,b) -> {
-				ItemEnt tupA = (ItemEnt)a;
-				ItemEnt tupB = (ItemEnt)b;
-				return tupA._2() > tupB._2() ? tupA : tupB;
+			miki = (ItemEnt)filteredCandidates.reduce((a,b) -> {
+					ItemEnt tupA = (ItemEnt)a;
+					ItemEnt tupB = (ItemEnt)b;
+					return tupA._2() > tupB._2() ? tupA : tupB;
 			});
 			// Compute upper bound entropies
-		//	List<Tuple2<List<String>,List<Map.Entry<List<String>,Integer>>>> missingCands = missingCandidatesPairRdd.collect();		
-		//	List<Tuple2<List<String>,List<Map.Entry<List<String>,Integer>>>> filterCands = filteredCandidates.collect();		
-		//	for (Tuple2<List<String>,List<Map.Entry<List<String>,Integer>>> missingCand : missingCands) {
-		//		 double ubEntropy = getUpperBoundEntropy(missingCand, filterCands);	
-		//	}	
+			/*
+			List<Item_ProjFreqs> missingCands = missingCandidatesPairRdd.collect();		
+			List<Item_ProjFreqs> filterCands = filteredCandidates.collect();		
+			for (Item_ProjFreqs missingCand : missingCands) {
+				double ubEntropy = getUpperBoundEntropy(missingCand, filterCands);	
+			}	
+			*/
 		}
 		// End timer
 		long elapsedTime = System.nanoTime() - startTime;
 		double elapsedSeconds = (double)elapsedTime / 1000000000.0;
 		System.out.println("@@@@@@@ Job 1: Global miki: " + (miki != null ? miki.toString() : "Empty"));
+		System.out.println("@@@@@@@ Job 1: Missing candidates: " + missingCandidates.size());
 		System.out.println("@@@@@@@ Job 1: Elapsed Time: " + elapsedSeconds + " seconds.");
 		return new Tuple2<ItemEnt,Itemsets>(miki, missingCandidates);
-		*/
 	}
 
 	// compute upper bound entropy
-	double getUpperBoundEntropy(Tuple2<List<String>,List<Map.Entry<List<String>,Integer>>> candTup, List<Tuple2<List<String>,List<Map.Entry<List<String>,Integer>>>> filteredCands) {
-		List<String> cand = candTup._1();
-		List<Map.Entry<List<String>,Integer>> projs = candTup._2();
-		Set<List<String>> candSubSets = subSets(cand);
-		//List<List<String>> candSubSets = subSets(cand).toArray();
+	double getUpperBoundEntropy(Item_ProjFreqs candTup, List<Item_ProjFreqs> filteredCands) {
+		Itemset cand = candTup._1();
+		List<ProjFreq> projs = candTup._2();
+		Set<Itemset> candSubSets = subSets(cand);
 		//System.out.println("Subset: " + candSubSets.toString());
 		// Find the biggest subset of cand
-		List<String> biggestSubset;
-		Iterator<List<String>> subsetIt = candSubSets.iterator();
+		Itemset biggestSubset;
+		Iterator<Itemset> subsetIt = candSubSets.iterator();
 		while (subsetIt.hasNext()) {
 			biggestSubset = subsetIt.next();
 			// Find frequency of 
-			for (Tuple2<List<String>,List<Map.Entry<List<String>,Integer>>> filledCandProj : filteredCands) {
-				List<String> fillCand = filledCandProj._1();
+			for (Item_ProjFreqs filledCandProj : filteredCands) {
+				Itemset fillCand = filledCandProj._1();
 				// Check if the subset is in any filled candidate set
-				if (fillCand.containsAll(fillCand)) {
+				if (fillCand.containsAll(cand)) {
 					// Yes, now get the projections for the subset using the filled candidate
-					Map<List<String>,Integer> subsetProjs = new LinkedHashMap<>();
-					for (Map.Entry<List<String>,Integer> proj : filledCandProj._2()) {
-						List<String> projSet = proj.getKey();
-						int projFreq = proj.getValue();
-						List<String> subsetProj = intersection(projSet, biggestSubset);
+					Map<Itemset,Integer> subsetProjs = new HashMap<>();
+					for (ProjFreq proj : filledCandProj._2()) {
+						Itemset projSet = proj._1();
+						int projFreq = proj._2();
+						Itemset subsetProj = intersect(projSet, biggestSubset);
 						//System.out.println(subsetProj.toString());
 						if (subsetProjs.containsKey(subsetProj)) {
 							subsetProjs.put(subsetProj,subsetProjs.get(subsetProjs) + projFreq);	
@@ -377,26 +378,26 @@ public class Phiks implements Serializable {
 		return 1.0;
 	}
 
-	<T> Set<List<T>> subSets(List<T> cand) {
-		Set<List<T>> result = new LinkedHashSet<>(); 
+	Set<Itemset> subSets(Itemset cand) {
+		Set<Itemset> result = new LinkedHashSet<>(); 
 		if (cand.size() == 1) {
 			 return result;
 		}
 
-		List<List<T>> newCands = new ArrayList<>();
-		for (T item : cand) {
-			List<T> withoutItem = removeItem(cand, item);	
+		List<Itemset> newCands = new ArrayList<>();
+		for (String item : cand) {
+			Itemset withoutItem = removeItem(cand, item);	
 			newCands.add(withoutItem);
 			result.add(withoutItem);
 		}
 
-		for (List<T> newCand : newCands) {
+		for (Itemset newCand : newCands) {
 			result.addAll(subSets(newCand));
 		}
 		return result;
 	}
 
-	Map<List<String>,Integer> updateCurrentMiki(Map<String,Map<List<String>,Integer>> featureMaps, List<String> localMiki, int splitSize) {
+	FeatureMap updateCurrentMiki(FeatureMaps featureMaps, Itemset localMiki, int splitSize) {
 		if (featureMaps == null) {
 			System.err.println("ERROR: feature maps is null");
 			return null;
@@ -410,7 +411,7 @@ public class Phiks implements Serializable {
 		String candidate = null;
 		//System.out.println("miki feature maps: " + featureMaps.toString());
 		for (Map.Entry entry : featureMaps.entrySet()) {
-			Map<List<String>,Integer> featureMap = (Map<List<String>,Integer>) entry.getValue(); 
+			FeatureMap featureMap = (FeatureMap) entry.getValue(); 
 			String feature = (String) entry.getKey();
 			double entropy = computeJointEntropy(feature,featureMaps, splitSize); 
 			if (maxEntropy < entropy){
@@ -424,8 +425,8 @@ public class Phiks implements Serializable {
 		return featureMaps.get(candidate); 
 	}
 
-	double computeJointEntropy(String candidate,Map<String,Map<List<String>,Integer>> featureMaps, int splitSize) {
-		Map<List<String>,Integer> candProjs = featureMaps.get(candidate);
+	double computeJointEntropy(String candidate,FeatureMaps featureMaps, int splitSize) {
+		FeatureMap candProjs = featureMaps.get(candidate);
 		double entropy = 0.0;
 		//System.out.println("miki cand projs: " + candProjs.values().toString());
 		//System.out.println("miki split size: " + splitSize);
@@ -458,9 +459,9 @@ public class Phiks implements Serializable {
 				if (idx++ % 2 != 0) 
 					continue;
 				// Keys for p.1
-				Projection projKey1 = (Projection) projEntry.getKey(); 
+				Itemset projKey1 = (Itemset) projEntry.getKey(); 
 				// Key for p.0
-				Projection projKey0 = new Projection(projKey1);
+				Itemset projKey0 = new Itemset(projKey1);
 				projKey0.remove(feature);
 				// Check if projKey0 is valid or not
 				// If not, skip
@@ -487,15 +488,15 @@ public class Phiks implements Serializable {
 		}
 	}
 
-	FeatureMaps generateFeatureMaps(Features remainFeatures, FeatureMap mikiMap) {
+	FeatureMaps generateFeatureMaps(Itemset remainItemset, FeatureMap mikiMap) {
 		FeatureMaps maps = new FeatureMaps();
-		for (String feature : remainFeatures) {
+		for (String feature : remainItemset) {
 			FeatureMap map = new FeatureMap();
 			// Generate candidate's projections
-			for (Projection proj : mikiMap.keySet()) {
+			for (Itemset proj : mikiMap.keySet()) {
 				//System.out.println("miki proj: " + proj.toString());
 				// Add current miki projection with end .1 by item s
-				Projection newProj = new Projection(proj);
+				Itemset newProj = new Itemset(proj);
 				newProj.add(feature);
 				map.put(newProj, 0);
 				// Add current miki projection with end .0 by item s into hash map of s
@@ -509,21 +510,21 @@ public class Phiks implements Serializable {
 		return maps;
 	}
 
-	Features getRemainFeatures(Itemset localMiki, Features featureList) {
+	Itemset getRemainItemset(Itemset localMiki, Itemset featureList) {
 		// Get remain features 
-		Features remainFeatures = new Features();
+		Itemset remainItemset = new Itemset();
 		for (String feature : featureList) {
 			if (!localMiki.contains(feature)) {
-				remainFeatures.add(feature);	
+				remainItemset.add(feature);	
 			}
 		}
-		return remainFeatures;
+		return remainItemset;
 	}
 
-	Itemsets getCandidates(Features remainFeatures, Itemset localMiki) {
+	Itemsets getCandidates(Itemset remainItemset, Itemset localMiki) {
 		// Combine each remain feature with current miki to create new candidate
 		Itemsets candidates = new Itemsets();
-		for (String feature : remainFeatures) {
+		for (String feature : remainItemset) {
 			Itemset candidate = new Itemset(localMiki);
 			candidate.add(feature);
 			candidates.add(candidate);
@@ -531,8 +532,8 @@ public class Phiks implements Serializable {
 		return candidates;
 	}
 
-	Set<String> intersect(Set<String> list1, Set<String> list2) {
-		Set<String> list = new LinkedHashSet<String>();
+	Itemset intersect(Set<String> list1, Set<String> list2) {
+		Itemset list = new Itemset();
 
 		for (String t : list1) {
 			if(list2.contains(t)) {
@@ -552,9 +553,9 @@ public class Phiks implements Serializable {
 		return list;
 	}
 
-	<T> List<T> removeItem(List<T> cand, T item) {
-		List<T> list = new ArrayList<T>();
-		for (T t : cand) {
+	Itemset removeItem(Itemset cand, String item) {
+		Itemset list = new Itemset();
+		for (String t : cand) {
 			if(!t.equals(item)) {
 				list.add(t);
 			}
