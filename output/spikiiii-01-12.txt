@@ -1,0 +1,28 @@
+Training data: 15529
+Training total partitions: 2
+Feature list size: 5542
+@@@@@@@@@@@@@@@ Output ##################
+1:@@@@@@@ Current miki: [refer]
+1:@@@@@@@ Elapsed Time: 0.645232567 seconds.
+2:@@@@@@@ Current miki: [refer, multiple]
+2:@@@@@@@ Elapsed Time: 1.025035686 seconds.
+3:@@@@@@@ Current miki: [refer, multiple, british]
+3:@@@@@@@ Elapsed Time: 1.357886604 seconds.
+4:@@@@@@@ Current miki: [refer, multiple, british, article]
+4:@@@@@@@ Elapsed Time: 1.685304273 seconds.
+5:@@@@@@@ Current miki: [refer, person, multiple, british, article]
+5:@@@@@@@ Elapsed Time: 2.050198464 seconds.
+6:@@@@@@@ Current miki: [refer, person, multiple, british, language, article]
+6:@@@@@@@ Elapsed Time: 2.51235496 seconds.
+7:@@@@@@@ Current miki: [politics, refer, person, multiple, british, language, article]
+7:@@@@@@@ Elapsed Time: 3.257151075 seconds.
+8:@@@@@@@ Current miki: [politics, refer, person, multiple, british, language, film, article]
+8:@@@@@@@ Elapsed Time: 4.293476221 seconds.
+9:@@@@@@@ Current miki: [politics, country, refer, person, multiple, british, language, film, article]
+9:@@@@@@@ Elapsed Time: 6.900074742 seconds.
+10:@@@@@@@ Current miki: [politics, country, refer, person, multiple, british, language, film, list, article]
+10:@@@@@@@ Elapsed Time: 12.200069859 seconds.
+11:@@@@@@@ Current miki: [politics, country, refer, person, multiple, british, language, film, history, list, article]
+11:@@@@@@@ Elapsed Time: 25.035274211 seconds.
+12:@@@@@@@ Current miki: [politics, country, refer, person, multiple, british, language, film, history, list, people, article]
+12:@@@@@@@ Elapsed Time: 129.722286642 seconds.

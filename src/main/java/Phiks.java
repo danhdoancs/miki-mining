@@ -34,6 +34,7 @@ public class Phiks implements Serializable {
 	long Fsize;	
 	int k;
 	long startTime;
+	int ratio = 10;
 	
 	Phiks(String dataFile, String featureFile, int k) {
 		String dataPath = "file:///home/ddoan/Projects/java/phiks/datasets/";
@@ -313,7 +314,7 @@ public class Phiks implements Serializable {
 		// Get missing candidates
 		JavaPairRDD missingCandidatesPairRdd = entropies.filter(a -> (Double)((Tuple2)a)._2() < 0);
 		JavaRDD<Itemset> missingCandidatesRdd = missingCandidatesPairRdd.keys();
-		Itemsets missingCandidates = new Itemsets(missingCandidatesRdd.take((int)Math.pow(10,k)));
+		Itemsets missingCandidates = new Itemsets(missingCandidatesRdd.take(ratio*k));
 		// Get the global MIKI
 		JavaPairRDD filteredCandidates = entropies.filter(a -> (Double)((Tuple2)a)._2() > -1);
 		ItemEnt miki = null;

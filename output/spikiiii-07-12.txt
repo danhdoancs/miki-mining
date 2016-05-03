@@ -1,0 +1,26 @@
+Training data: 787104
+Training total partitions: 2
+Feature list size: 9242
+@@@@@@@@@@@@@@@ Output ##################
+1:@@@@@@@ Current miki: [settlement]
+1:@@@@@@@ Elapsed Time: 2.495272007 seconds.
+2:@@@@@@@ Current miki: [refer, settlement]
+2:@@@@@@@ Elapsed Time: 4.545025397 seconds.
+3:@@@@@@@ Current miki: [refer, county, settlement]
+3:@@@@@@@ Elapsed Time: 6.333115379 seconds.
+4:@@@@@@@ Current miki: [refer, county, list, settlement]
+4:@@@@@@@ Elapsed Time: 8.306238946 seconds.
+5:@@@@@@@ Current miki: [refer, county, list, commons, settlement]
+5:@@@@@@@ Elapsed Time: 10.077929139 seconds.
+6:@@@@@@@ Current miki: [refer, county, british, list, commons, settlement]
+6:@@@@@@@ Elapsed Time: 12.37555512 seconds.
+7:@@@@@@@ Current miki: [refer, person, county, british, list, commons, settlement]
+7:@@@@@@@ Elapsed Time: 14.946469949 seconds.
+8:@@@@@@@ Current miki: [refer, person, county, british, list, title, commons, settlement]
+8:@@@@@@@ Elapsed Time: 18.519428916 seconds.
+9:@@@@@@@ Current miki: [refer, united, person, county, british, list, title, commons, settlement]
+9:@@@@@@@ Elapsed Time: 24.437714105 seconds.
+10:@@@@@@@ Current miki: [refer, united, person, county, multiple, british, list, title, commons, settlement]
+10:@@@@@@@ Elapsed Time: 36.278141783 seconds.
+11:@@@@@@@ Current miki: [refer, united, person, album, county, multiple, british, list, title, commons, settlement]
+11:@@@@@@@ Elapsed Time: 65.646209657 seconds.

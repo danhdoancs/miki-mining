@@ -1,0 +1,26 @@
+Training data: 116060
+Training total partitions: 2
+Feature list size: 8101
+@@@@@@@@@@@@@@@ Output ##################
+1:@@@@@@@ Current miki: [settlement]
+1:@@@@@@@ Elapsed Time: 1.049316393 seconds.
+2:@@@@@@@ Current miki: [county, settlement]
+2:@@@@@@@ Elapsed Time: 1.79821363 seconds.
+3:@@@@@@@ Current miki: [county, township, settlement]
+3:@@@@@@@ Elapsed Time: 2.351403089 seconds.
+4:@@@@@@@ Current miki: [refer, county, township, settlement]
+4:@@@@@@@ Elapsed Time: 2.87546077 seconds.
+5:@@@@@@@ Current miki: [refer, year, county, township, settlement]
+5:@@@@@@@ Elapsed Time: 3.59787902 seconds.
+6:@@@@@@@ Current miki: [refer, year, county, british, township, settlement]
+6:@@@@@@@ Elapsed Time: 4.35509248 seconds.
+7:@@@@@@@ Current miki: [refer, year, person, county, british, township, settlement]
+7:@@@@@@@ Elapsed Time: 5.511815132 seconds.
+8:@@@@@@@ Current miki: [refer, year, person, county, british, film, township, settlement]
+8:@@@@@@@ Elapsed Time: 7.237427695 seconds.
+9:@@@@@@@ Current miki: [refer, year, person, county, multiple, british, film, township, settlement]
+9:@@@@@@@ Elapsed Time: 11.389989823 seconds.
+10:@@@@@@@ Current miki: [refer, year, person, county, multiple, british, film, list, township, settlement]
+10:@@@@@@@ Elapsed Time: 21.285585644 seconds.
+11:@@@@@@@ Current miki: [refer, year, city, person, county, multiple, british, film, list, township, settlement]
+11:@@@@@@@ Elapsed Time: 51.186308324 seconds.

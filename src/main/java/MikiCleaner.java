@@ -12,8 +12,8 @@ import java.util.List;
 public class MikiCleaner {
 	static int featureThreshold = 1;
 	static List<String> featureList = new ArrayList();
-	static File cleanedDatasetFile = new File("datasets/cleaned_wiki_articles_08.txt");
-	static File featureFile = new File("datasets/feature_list_08.txt");
+	static File cleanedDatasetFile = new File("datasets/cleaned_wiki_articles_07.txt");
+	static File featureFile = new File("datasets/feature_list_07.txt");
 	static File dict = new File("database/google.txt");
 	static File stopWordFile = new File("database/stopwords.txt");
 	static List<String> dictList = new ArrayList(); 
@@ -33,7 +33,7 @@ public class MikiCleaner {
 		cleanData("datasets/wiki_articles_p5.xml", true);
 		cleanData("datasets/wiki_articles_p6.xml", true);
 		cleanData("datasets/wiki_articles_p7.xml", true);
-		cleanData("datasets/wiki_articles_p8.xml", true);
+//		cleanData("datasets/wiki_articles_p8.xml", true);
 	}
 
 	static void cleanData(String xmlFile, Boolean append) throws IOException {
@@ -50,14 +50,7 @@ public class MikiCleaner {
 			XMLInputFactory xmlFactory = XMLInputFactory.newInstance();
 			XMLEventReader xmlEventReader = xmlFactory.createXMLEventReader(fileInputStream);
 			while (xmlEventReader.hasNext()) {
-				// Bug
-			//	if (articleTotal == 270598 || articleTotal == 270598 || articleTotal == 289048) {
-			//		articleTotal++;
-			//		xmlEventReader.nextEvent();
-			//		continue;
-			//	}
-
-				XMLEvent xmlEvent = xmlEventReader.nextEvent();
+					XMLEvent xmlEvent = xmlEventReader.nextEvent();
 				if(xmlEvent.isStartElement()) {
 					StartElement startElement = xmlEvent.asStartElement();
 					if (startElement.getName().getLocalPart().equals("text")) {

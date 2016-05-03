@@ -54,10 +54,21 @@ class ItemProj_Freq extends Tuple2<Projection,Integer> {
 		super(ip,freq);
 	}
 }
+class ItemProj_Freq2 extends Tuple2<Projection2,Integer> {
+	ItemProj_Freq2(Projection2 ip, Integer freq) {
+		super(ip,freq);
+	}
+}
 
 class Item_ProjFreqs extends Tuple2<Itemset,List<ProjFreq>> {
 	Item_ProjFreqs(Itemset is, List<ProjFreq> pf) {
 		super(is, pf);
+	}
+}
+
+class Projection2 extends Tuple2<String, Itemset> {
+	Projection2(String is, Itemset prj) {
+		super(is,prj);
 	}
 }
 
