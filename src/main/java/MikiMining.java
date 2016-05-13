@@ -1,3 +1,7 @@
+// Projection: Miki Mining
+// Author: Danh Doan
+// Class: MikiMining
+
 import org.apache.spark.api.java.function.Function;
 import org.apache.spark.api.java.function.VoidFunction;
 import org.apache.spark.api.java.function.PairFlatMapFunction;

@@ -1,3 +1,7 @@
+// Projection: Miki Mining
+// Author: Danh Doan
+// Class: MikiCleaner
+
 import org.w3c.dom.*;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

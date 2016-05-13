@@ -1,3 +1,7 @@
+// Projection: Miki Mining
+// Author: Danh Doan
+// Class: MikiCore
+    
 import scala.Tuple2;
 import java.util.List;
 import java.util.ArrayList;

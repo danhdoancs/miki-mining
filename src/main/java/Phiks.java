@@ -1,3 +1,7 @@
+// Projection: Miki Mining
+// Author: Danh Doan
+// Class: PHIKS
+
 import org.apache.spark.api.java.function.Function;
 import org.apache.spark.api.java.function.FlatMapFunction;
 import org.apache.spark.api.java.function.PairFunction;
