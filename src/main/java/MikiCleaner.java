@@ -21,11 +21,11 @@ public class MikiCleaner {
 	static long tupleSize = 0; 
 	static long articleTotal = 0;
 	public static void main(String[] args) throws IOException {
+		// Load dictionary and stop word list
 		loadDictionary();	
 		System.out.println("Load dictionary. Size = " +  dictList.size());
-		//loadFeatureList();
-		//System.out.println("Load feature list. Size = " + featureList.size());
 
+		// Clean subset of dataset and integrate them into final dataset
 		cleanData("datasets/wiki_articles_p1.xml", false);	
 		cleanData("datasets/wiki_articles_p2.xml", true);
 		cleanData("datasets/wiki_articles_p3.xml", true);
@@ -33,9 +33,10 @@ public class MikiCleaner {
 		cleanData("datasets/wiki_articles_p5.xml", true);
 		cleanData("datasets/wiki_articles_p6.xml", true);
 		cleanData("datasets/wiki_articles_p7.xml", true);
-//		cleanData("datasets/wiki_articles_p8.xml", true);
+		cleanData("datasets/wiki_articles_p8.xml", true);
 	}
 
+	// Function: clean Data
 	static void cleanData(String xmlFile, Boolean append) throws IOException {
 		// Prepare output cleaned dataset file
 		BufferedWriter bw = new BufferedWriter(new FileWriter(cleanedDatasetFile, append));
@@ -112,6 +113,7 @@ public class MikiCleaner {
 		System.out.println("Finished cleaning data.");
 	}
 
+	// Function: format Data
 	static void formatData(String finalFile) throws IOException {
 			// Create final oataset
 			BufferedWriter bw2 = new BufferedWriter(new FileWriter(finalFile));
@@ -152,6 +154,7 @@ public class MikiCleaner {
 			bw2.close();
 	}
 
+	// Function: load feature list
 	static void loadFeatureList() throws IOException {
 		// Read stopWord list
 	 	BufferedReader br = new BufferedReader(new FileReader(featureFile));
@@ -162,6 +165,7 @@ public class MikiCleaner {
 		br.close();
 	}
 
+	// Function: load dictionary
 	static void loadDictionary() throws IOException {
 		// Read dictionary
 		BufferedReader br = new BufferedReader(new FileReader(dict));

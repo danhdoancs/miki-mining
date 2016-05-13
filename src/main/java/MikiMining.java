@@ -16,22 +16,22 @@ import java.util.LinkedHashMap;
 import java.util.AbstractMap;
 import scala.Tuple2;
 
-
+// Main class for miki mining on Spark
 public class MikiMining {
-
 	public static void main(String[] args) throws Exception {
-
 		// Check input size
 		if (args.length < 4) {
 			System.err.println("Usage:<algorithm_idx> <data_file> <feature_file> <k>");
 			return;
 		}
 
+		// Algorithm index: 1 for SPIKI, 2 for PHIKS
 		int algorithmIdx = Integer.parseInt(args[0]);
 		String dataFile = args[1];
 		String featureFile = args[2]; 
 		int k = Integer.parseInt(args[3]);	
 
+		// Run algortithm according to the index
 		switch (algorithmIdx) {
 			case 1:
 				// SPIKI

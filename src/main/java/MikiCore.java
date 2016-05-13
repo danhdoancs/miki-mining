@@ -19,6 +19,7 @@ class Itemset extends HashSet<String> {
 		super();
 	}	
 }
+
 // List of itemsets
 class Itemsets extends ArrayList<Itemset> {
 	Itemsets(List<Itemset> iss) {
@@ -28,19 +29,22 @@ class Itemsets extends ArrayList<Itemset> {
 		super();
 	}
 }
-// <A,B> -> 11, 10, 01, 00
+
+// Pair <Itemset, Projeciton>
 class Projection extends Tuple2<Itemset, Itemset> {
 	Projection(Itemset is, Itemset prj) {
 		super(is,prj);
 	}
 }
-// 11 -> 3, 10 -> 2
+
+// Pair <Projection, Frequency>
 class ProjFreq extends Tuple2<Itemset,Integer> {
 	ProjFreq(Itemset prj, Integer freq) {
 		super(prj,freq);
 	}
 }
-// <A,B> -> 1.53
+
+// Pair <Itemset, Entropy>
 class ItemEnt extends Tuple2<Itemset, Double> {
 	ItemEnt(Itemset is, Double ent) {
 		super(is,ent);
@@ -49,35 +53,43 @@ class ItemEnt extends Tuple2<Itemset, Double> {
 		super(tup._1(), tup._2());
 	}
 }
+
+// Pair <<Itemset, Projeciton>, Frequency>
 class ItemProj_Freq extends Tuple2<Projection,Integer> {
 	ItemProj_Freq(Projection ip, Integer freq) {
 		super(ip,freq);
 	}
 }
+
+// Pair <<Feature,Projection>,Frequency>
 class ItemProj_Freq2 extends Tuple2<Projection2,Integer> {
 	ItemProj_Freq2(Projection2 ip, Integer freq) {
 		super(ip,freq);
 	}
 }
 
+// Pair <Itemset,List<<Projection, Frequency>>>
 class Item_ProjFreqs extends Tuple2<Itemset,List<ProjFreq>> {
 	Item_ProjFreqs(Itemset is, List<ProjFreq> pf) {
 		super(is, pf);
 	}
 }
 
+// Pair <Feature, Projeciton>
 class Projection2 extends Tuple2<String, Itemset> {
 	Projection2(String is, Itemset prj) {
 		super(is,prj);
 	}
 }
 
+// Hash Map <Projection, Frequency>
 class FeatureMap extends LinkedHashMap<Itemset,Integer> {
 	FeatureMap() {
 		super();
 	}
 }
 
+// Map of Hash map <Feature, HashMap>
 class FeatureMaps extends HashMap<String, FeatureMap> {
 	FeatureMaps() {
 		super();
