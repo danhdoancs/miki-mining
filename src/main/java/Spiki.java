@@ -32,11 +32,8 @@ public class Spiki implements Serializable {
 	long Fsize;	
 
 	Spiki(String dataFile, String featureFile) {
-		String dataPath = "file:///home/ddoan/Projects/java/phiks/datasets/";
-		//String dataset = "hdfs://doan1.cs.ou.edu:9000/user/hduser/phiks/in/" + dataFile;
-		String dataset = dataPath + dataFile;
-		//String featureListFile = "hdfs://doan1.cs.ou.edu:9000/user/hduser/phiks/in/" + featureFile;
-		String featureListFile = dataPath + featureFile;
+		String dataset = dataFile;
+		String featureListFile = featureFile;
 
 		// Config
 		SparkConf conf = new SparkConf().setAppName("SPIKI");

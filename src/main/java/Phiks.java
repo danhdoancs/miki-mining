@@ -44,11 +44,8 @@ public class Phiks implements Serializable {
 	Phiks(String dataFile, String featureFile, int k) {
 		System.out.println("@@@@@@@@@@@@@@@ Output ##################");
 
-		String dataPath = "file:///home/ddoan/Projects/java/miki-mining/datasets/";
-		//String dataset = "hdfs://doan1.cs.ou.edu:9000/user/hduser/phiks/in/" + dataFile;
-		String dataset = dataPath + dataFile;
-		//String featureListFile = "hdfs://doan1.cs.ou.edu:9000/user/hduser/phiks/in/" + featureFile;
-		String featureListFile = dataPath + featureFile;
+		String dataset = dataFile;
+		String featureListFile = featureFile;
 
 		SparkConf conf = new SparkConf().setAppName("PHIKS");
 		JavaSparkContext sc = new JavaSparkContext(conf);

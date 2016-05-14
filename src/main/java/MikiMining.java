@@ -1,4 +1,4 @@
-// Projection: Miki Mining
+// Project: Miki Mining
 // Author: Danh Doan
 // Class: MikiMining
 
@@ -31,8 +31,9 @@ public class MikiMining {
 
 		// Algorithm index: 1 for SPIKI, 2 for PHIKS
 		int algorithmIdx = Integer.parseInt(args[0]);
-		String dataFile = args[1];
-		String featureFile = args[2]; 
+		String dataPath = "./miki/in/";
+		String dataFile = dataPath + args[1];
+		String featureFile = dataPath + args[2]; 
 		int k = Integer.parseInt(args[3]);	
 
 		// Run algortithm according to the index
