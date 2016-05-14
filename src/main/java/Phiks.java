@@ -1,4 +1,4 @@
-// Projection: Miki Mining
+// Project: Miki Mining
 // Author: Danh Doan
 // Class: PHIKS
 
@@ -32,16 +32,19 @@ import java.io.FileWriter;
 
 public class Phiks implements Serializable {
 
+	// Data set
 	JavaRDD<Itemset> data;
 	Itemset featureList;
 	int N;
 	long Fsize;	
 	int k;
 	long startTime;
-	int ratio = 10;
+	int ratio = 2;
 	
 	Phiks(String dataFile, String featureFile, int k) {
-		String dataPath = "file:///home/ddoan/Projects/java/phiks/datasets/";
+		System.out.println("@@@@@@@@@@@@@@@ Output ##################");
+
+		String dataPath = "file:///home/ddoan/Projects/java/miki-mining/datasets/";
 		//String dataset = "hdfs://doan1.cs.ou.edu:9000/user/hduser/phiks/in/" + dataFile;
 		String dataset = dataPath + dataFile;
 		//String featureListFile = "hdfs://doan1.cs.ou.edu:9000/user/hduser/phiks/in/" + featureFile;
@@ -79,7 +82,6 @@ public class Phiks implements Serializable {
 		}
 		// Miki
 		ItemEnt miki = null;
-		System.out.println("@@@@@@@@@@@@@@@ Output ##################");
 		Tuple2 result = runJob1();
 		ItemEnt job1Miki = (ItemEnt)result._1();
 		//System.out.println("@@@@@@ Job 1 Miki: " + job1Miki.toString());
@@ -125,8 +127,9 @@ public class Phiks implements Serializable {
 		.reduceByKey((a,b) -> {
 			List<ProjFreq> listA = (List<ProjFreq>)a;
 			List<ProjFreq> listB = (List<ProjFreq>)b;
-			listA.addAll(listB);
-			return listA;
+			List<ProjFreq> listAB = new ArrayList(listA);
+			listAB.addAll(listB);
+			return listAB;
 		})
 
 		// Compute entropy
@@ -194,7 +197,6 @@ public class Phiks implements Serializable {
 					// Generate feature maps
 					FeatureMaps featureMaps = generateFeatureMaps(remainItemset, mikiMap);
 					//System.out.println(t+": Feature maps: " + featureMaps.toString());
-
 					// Scan the data split
 					// For each transaction T, get S = T intesect F/X
 					for (Itemset tran : subset) {
@@ -226,7 +228,6 @@ public class Phiks implements Serializable {
 					// Get freqency of feature.0 projections end 0
 					// p.0 = p - p.1
 					updateFeatureMaps(featureMaps, mikiMap, localN);
-					
 					//System.out.println(t+": Feature maps: " + featureMaps.toString());
 					//System.out.println("before miki: " + localMiki.toString());
 					if (t < k) {
@@ -269,6 +270,8 @@ public class Phiks implements Serializable {
 				return tup;
 			}
 		}).reduceByKey((a,b) -> a+b);	
+		//pairProj.count();
+		//printTime(startTime, "After reduce frequency: ");
 		// Reduce
 		// Combine to <Candidate, [Itemset -> Frequency]>
 		JavaPairRDD combinedProj = pairProj.mapToPair(new PairFunction<Tuple2, Itemset, List<ProjFreq>>() {
@@ -286,7 +289,6 @@ public class Phiks implements Serializable {
 			listA.addAll(listB);
 			return listA;
 		});
-		
 		//System.out.println(combinedProj.collect().toString());
 		// Compute entropy or -1 if missing projection
 		JavaPairRDD entropies = combinedProj.mapToPair(new PairFunction<Tuple2, Itemset, Double>() {
@@ -305,45 +307,51 @@ public class Phiks implements Serializable {
 				}
 				// Check if the candidate missed any projections
 				if (totalFreq < N) {
-					// Compute upper bound
 					// Set upper bound entropy as negative value to seperate with filled candidates
-					entropy = -1; 
+					entropy = -entropy; 
 				}
 				return new ItemEnt(candidate, entropy);
 			}
 		});
 
 		// Work on reducer
-
+		//System.out.println("Cands: " + combinedProj.collect().toString());
 		// Get missing candidates
-		JavaPairRDD missingCandidatesPairRdd = entropies.filter(a -> (Double)((Tuple2)a)._2() < 0);
-		JavaRDD<Itemset> missingCandidatesRdd = missingCandidatesPairRdd.keys();
-		Itemsets missingCandidates = new Itemsets(missingCandidatesRdd.take(ratio*k));
+		//printTime(startTime, "before get missing candidates: ");
+		JavaPairRDD missingCandidatesPairRdd = entropies.filter(a -> (Double)((ItemEnt)a)._2() < 0);
+		JavaPairRDD missingCandidatesRdd = missingCandidatesPairRdd.mapToPair(a -> ((Tuple2)a).swap()).sortByKey(true);
+		Itemsets missingCandidates = new Itemsets(missingCandidatesRdd.values().take(ratio*k));
+		//System.out.println("Sorted cands: " + missingCandidates.toString());
 		// Get the global MIKI
 		JavaPairRDD filteredCandidates = entropies.filter(a -> (Double)((Tuple2)a)._2() > -1);
 		ItemEnt miki = null;
+		// get job 1 miki
 		if (filteredCandidates.count() > 0) {
 			miki = (ItemEnt)filteredCandidates.reduce((a,b) -> {
 					ItemEnt tupA = (ItemEnt)a;
 					ItemEnt tupB = (ItemEnt)b;
 					return tupA._2() > tupB._2() ? tupA : tupB;
 			});
-			// Compute upper bound entropies
-			/*
-			List<Item_ProjFreqs> missingCands = missingCandidatesPairRdd.collect();		
-			List<Item_ProjFreqs> filterCands = filteredCandidates.collect();		
-			for (Item_ProjFreqs missingCand : missingCands) {
-				double ubEntropy = getUpperBoundEntropy(missingCand, filterCands);	
-			}	
-			*/
 		}
+		// get missing candidates
+		if (missingCandidates.size() > 0) {
+		}
+
 		// End timer
 		long elapsedTime = System.nanoTime() - startTime;
 		double elapsedSeconds = (double)elapsedTime / 1000000000.0;
 		System.out.println("@@@@@@@ Job 1: Global miki: " + (miki != null ? miki.toString() : "Empty"));
-		System.out.println("@@@@@@@ Job 1: Missing candidates: " + missingCandidates.size());
+		//System.out.println("@@@@@@@ Job 1: Missing candidates: " + missingCandidatesRdd.count());
+		//System.out.println("@@@@@@@ Job 1: Chosen missing candidates: " + missingCandidates.size());
 		System.out.println("@@@@@@@ Job 1: Elapsed Time: " + elapsedSeconds + " seconds.");
 		return new Tuple2<ItemEnt,Itemsets>(miki, missingCandidates);
+	}
+
+	// Print time 
+	void printTime(long startTime, String message) {
+		long elapsedTime = System.nanoTime() - startTime;
+		double elapsedSeconds = (double)elapsedTime / 1000000000.0;
+		System.out.println(message + elapsedSeconds + " seconds.");
 	}
 
 	// compute upper bound entropy
@@ -427,6 +435,7 @@ public class Phiks implements Serializable {
 		}
 		// Update current miki
 		localMiki.add(candidate);
+		System.out.println("@@@@@@@@ Local miki entropy: " + maxEntropy);
 		return featureMaps.get(candidate); 
 	}
 

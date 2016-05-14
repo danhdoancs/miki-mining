@@ -1,7 +1,7 @@
 Training data: 595173
 Training total partitions: 2
 Feature list size: 9189
-@@@@@@@@@@@@@@@ Output ##################
+@@@@@@@@@@@@@@@ Output ################## 1
 : Subset size: 296266
 : Subset size: 298907
 @@@@@@@ Job 1: Global miki: ([settlement],0.23628550323199804)
@@ -10,7 +10,7 @@ Feature list size: 9189
 Training data: 595173
 Training total partitions: 2
 Feature list size: 9189
-@@@@@@@@@@@@@@@ Output ##################
+@@@@@@@@@@@@@@@ Output ################## 2
 : Subset size: 296266
 : Subset size: 298907
 @@@@@@@ Job 1: Local miki: [settlement]
@@ -26,7 +26,7 @@ Feature list size: 9189
 Training data: 595173
 Training total partitions: 2
 Feature list size: 9189
-@@@@@@@@@@@@@@@ Output ##################
+@@@@@@@@@@@@@@@ Output ################## 3
 : Subset size: 296266
 : Subset size: 298907
 @@@@@@@ Job 1: Local miki: [settlement]
@@ -46,7 +46,7 @@ Feature list size: 9189
 Training data: 595173
 Training total partitions: 2
 Feature list size: 9189
-@@@@@@@@@@@@@@@ Output ##################
+@@@@@@@@@@@@@@@ Output ################## 4
 : Subset size: 296266
 : Subset size: 298907
 @@@@@@@ Job 1: Local miki: [commons]
@@ -70,7 +70,7 @@ Feature list size: 9189
 Training data: 595173
 Training total partitions: 2
 Feature list size: 9189
-@@@@@@@@@@@@@@@ Output ##################
+@@@@@@@@@@@@@@@ Output ################## 5
 : Subset size: 296266
 : Subset size: 298907
 @@@@@@@ Job 1: Local miki: [commons]
