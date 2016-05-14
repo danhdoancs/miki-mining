@@ -1,0 +1,6 @@
+@@@@@@@@@@@@@@@ Output ##################
+Training data: 787104
+Training total partitions: 2
+Feature list size: 9242
+@@@@@@@ Job 1: Global miki: ([settlement],0.20175255850288118)
+@@@@@@@ Job 1: Elapsed Time: 6.733755748 seconds.

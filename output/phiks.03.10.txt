@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@ Output ##################
+@@@@@@@@@@@@@@@ Output ##################
+Training data: 116060
+Training total partitions: 2
+Feature list size: 8101
+@@@@@@@ Job 1: Global miki: Empty
+@@@@@@@ Job 1: Elapsed Time: 135.598599923 seconds.
+@@@@@@@ Job 2: Global miki: ([wisconsin, pennsylvania, minnesota, refer, north, county, british, texas, township, settlement],1.3862789497110877)
+@@@@@@@ Job 2: Elapsed Time: 138.257835986 seconds.
+@@@@@@@ Final miki: ([wisconsin, pennsylvania, minnesota, refer, north, county, british, texas, township, settlement],1.3862789497110877)

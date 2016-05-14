@@ -1,0 +1,18 @@
+@@@@@@@@@@@@@@@ Output ##################
+Training data: 15529
+Training total partitions: 2
+Feature list size: 5542
+@@@@@@@ Job 1: Global miki: ([refer, keeping, person, multiple, alternative, british, language, history, film, article],-0.8227605327481363)
+@@@@@@@ Job 1: Elapsed Time: 44.861395864 seconds.
+@@@@@@@ Job 2: Global miki: ([politics, country, refer, person, christian, multiple, british, language, film, article],0.9923657870654407)
+@@@@@@@ Job 2: Elapsed Time: 45.451672666 seconds.
+@@@@@@@ Final miki: ([politics, country, refer, person, christian, multiple, british, language, film, article],0.9923657870654407)
+@@@@@@@@@@@@@@@ Output ##################
+Training data: 15529
+Training total partitions: 2
+Feature list size: 5542
+@@@@@@@ Job 1: Global miki: ([refer, keeping, person, multiple, alternative, british, language, history, film, article],-0.8227605327481363)
+@@@@@@@ Job 1: Elapsed Time: 46.058422142 seconds.
+@@@@@@@ Job 2: Global miki: ([politics, country, refer, person, christian, multiple, british, language, film, article],0.9923657870654407)
+@@@@@@@ Job 2: Elapsed Time: 46.687643677 seconds.
+@@@@@@@ Final miki: ([politics, country, refer, person, christian, multiple, british, language, film, article],0.9923657870654407)

@@ -1,0 +1,13 @@
+@@@@@@@@@@@@@@@ Output ##################
+Training data: 182512
+Training total partitions: 2
+Feature list size: 8653
+@@@@@@@@@@@@@@@ Output ##################
+Training data: 182512
+Training total partitions: 2
+Feature list size: 8653
+@@@@@@@ Job 1: Global miki: ([refer, united, artist, person, multiple, british, list, title, wanna, settlement],-0.8947384108711135)
+@@@@@@@ Job 1: Elapsed Time: 136.474305251 seconds.
+@@@@@@@ Job 2: Global miki: ([wisconsin, minnesota, refer, year, city, county, british, list, township, settlement],1.3036389259584165)
+@@@@@@@ Job 2: Elapsed Time: 139.383750724 seconds.
+@@@@@@@ Final miki: ([wisconsin, minnesota, refer, year, city, county, british, list, township, settlement],1.3036389259584165)

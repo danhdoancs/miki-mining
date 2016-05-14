@@ -1,0 +1,9 @@
+@@@@@@@@@@@@@@@ Output ##################
+Training data: 46002
+Training total partitions: 2
+Feature list size: 7357
+@@@@@@@ Job 1: Global miki: ([year, refer, united, person, multiple, british, language, decisions, film, article],-0.8650540865268324)
+@@@@@@@ Job 1: Elapsed Time: 63.241604108 seconds.
+@@@@@@@ Job 2: Global miki: ([greek, refer, year, united, person, county, multiple, british, film, list],1.0942982584463878)
+@@@@@@@ Job 2: Elapsed Time: 64.483808633 seconds.
+@@@@@@@ Final miki: ([greek, refer, year, united, person, county, multiple, british, film, list],1.0942982584463878)

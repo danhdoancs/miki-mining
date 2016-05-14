@@ -1,0 +1,9 @@
+@@@@@@@@@@@@@@@ Output ##################
+Training data: 787104
+Training total partitions: 2
+Feature list size: 9242
+@@@@@@@ Job 1: Global miki: ([refer, person, pantyhose, british, list, title, commons],-0.715020144313323)
+@@@@@@@ Job 1: Elapsed Time: 33.474855677 seconds.
+@@@@@@@ Job 2: Global miki: ([refer, person, county, british, list, title, settlement],0.9039687218278415)
+@@@@@@@ Job 2: Elapsed Time: 38.709640303 seconds.
+@@@@@@@ Final miki: ([refer, person, county, british, list, title, settlement],0.9039687218278415)

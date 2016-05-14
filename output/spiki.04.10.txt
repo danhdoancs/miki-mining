@@ -1,0 +1,24 @@
+Training data: 182512
+Training total partitions: 2
+Feature list size: 8653
+@@@@@@@@@@@@@@@ Output ##################
+1:@@@@@@@ Current miki: [settlement]
+1:@@@@@@@ Elapsed Time: 2.12356014 seconds.
+2:@@@@@@@ Current miki: [refer, settlement]
+2:@@@@@@@ Elapsed Time: 3.633155245 seconds.
+3:@@@@@@@ Current miki: [refer, county, settlement]
+3:@@@@@@@ Elapsed Time: 5.319425629 seconds.
+4:@@@@@@@ Current miki: [refer, county, british, settlement]
+4:@@@@@@@ Elapsed Time: 6.90585337 seconds.
+5:@@@@@@@ Current miki: [refer, county, british, township, settlement]
+5:@@@@@@@ Elapsed Time: 8.681543079 seconds.
+6:@@@@@@@ Current miki: [refer, year, county, british, township, settlement]
+6:@@@@@@@ Elapsed Time: 10.959848454 seconds.
+7:@@@@@@@ Current miki: [refer, year, county, british, list, township, settlement]
+7:@@@@@@@ Elapsed Time: 14.138867197 seconds.
+8:@@@@@@@ Current miki: [refer, year, person, county, british, list, township, settlement]
+8:@@@@@@@ Elapsed Time: 18.731124798 seconds.
+9:@@@@@@@ Current miki: [refer, year, person, county, british, list, title, township, settlement]
+9:@@@@@@@ Elapsed Time: 26.47115269 seconds.
+10:@@@@@@@ Current miki: [refer, year, person, county, multiple, british, list, title, township, settlement]
+10:@@@@@@@ Elapsed Time: 43.041678166 seconds.
