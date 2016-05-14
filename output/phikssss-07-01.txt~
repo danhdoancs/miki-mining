@@ -1,0 +1,343 @@
+Training data: 595173
+Training total partitions: 2
+Feature list size: 9189
+@@@@@@@@@@@@@@@ Output ##################
+: Subset size: 296266
+: Subset size: 298907
+@@@@@@@ Job 1: Global miki: ([settlement],0.23628550323199804)
+@@@@@@@ Job 1: Missing candidates: 0
+@@@@@@@ Job 1: Elapsed Time: 3.310072242 seconds.
+Training data: 595173
+Training total partitions: 2
+Feature list size: 9189
+@@@@@@@@@@@@@@@ Output ##################
+: Subset size: 296266
+: Subset size: 298907
+@@@@@@@ Job 1: Local miki: [settlement]
+@@@@@@@ Job 1: Progress Time: 1.456550106 seconds.
+@@@@@@@ Job 1: Local miki: [commons]
+@@@@@@@ Job 1: Progress Time: 1.551304695 seconds.
+@@@@@@@ Job 1: Global miki: ([commons, settlement],0.3446832339014463)
+@@@@@@@ Job 1: Missing candidates: 20
+@@@@@@@ Job 1: Elapsed Time: 5.479863452 seconds.
+@@@@@@@ Job 2: Global miki: ([content, settlement],0.24098550800174812)
+@@@@@@@ Job 2: Elapsed Time: 8.51318639 seconds.
+@@@@@@@ Final miki: ([commons, settlement],0.3446832339014463)
+Training data: 595173
+Training total partitions: 2
+Feature list size: 9189
+@@@@@@@@@@@@@@@ Output ##################
+: Subset size: 296266
+: Subset size: 298907
+@@@@@@@ Job 1: Local miki: [settlement]
+@@@@@@@ Job 1: Progress Time: 1.413939852 seconds.
+@@@@@@@ Job 1: Local miki: [commons]
+@@@@@@@ Job 1: Progress Time: 1.503062535 seconds.
+@@@@@@@ Job 1: Local miki: [refer, settlement]
+@@@@@@@ Job 1: Progress Time: 2.351159282 seconds.
+@@@@@@@ Job 1: Local miki: [refer, commons]
+@@@@@@@ Job 1: Progress Time: 2.516337881 seconds.
+@@@@@@@ Job 1: Global miki: ([refer, commons, settlement],0.5053687024953097)
+@@@@@@@ Job 1: Missing candidates: 30
+@@@@@@@ Job 1: Elapsed Time: 6.540772909 seconds.
+@@@@@@@ Job 2: Global miki: ([wisconsin, refer, settlement],0.4471101152362138)
+@@@@@@@ Job 2: Elapsed Time: 10.750220698 seconds.
+@@@@@@@ Final miki: ([refer, commons, settlement],0.5053687024953097)
+Training data: 595173
+Training total partitions: 2
+Feature list size: 9189
+@@@@@@@@@@@@@@@ Output ##################
+: Subset size: 296266
+: Subset size: 298907
+@@@@@@@ Job 1: Local miki: [commons]
+@@@@@@@ Job 1: Progress Time: 1.427194953 seconds.
+@@@@@@@ Job 1: Local miki: [settlement]
+@@@@@@@ Job 1: Progress Time: 1.574563292 seconds.
+@@@@@@@ Job 1: Local miki: [refer, commons]
+@@@@@@@ Job 1: Progress Time: 2.347447797 seconds.
+@@@@@@@ Job 1: Local miki: [refer, settlement]
+@@@@@@@ Job 1: Progress Time: 2.577174643 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, commons]
+@@@@@@@ Job 1: Progress Time: 3.453936066 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, settlement]
+@@@@@@@ Job 1: Progress Time: 3.592699105 seconds.
+@@@@@@@ Job 1: Global miki: ([county, refer, commons, settlement],0.6439479731224281)
+@@@@@@@ Job 1: Missing candidates: 40
+@@@@@@@ Job 1: Elapsed Time: 9.237442056 seconds.
+@@@@@@@ Job 2: Global miki: ([county, heritage, refer, settlement],0.5465891198369831)
+@@@@@@@ Job 2: Elapsed Time: 14.66412703 seconds.
+@@@@@@@ Final miki: ([county, refer, commons, settlement],0.6439479731224281)
+Training data: 595173
+Training total partitions: 2
+Feature list size: 9189
+@@@@@@@@@@@@@@@ Output ##################
+: Subset size: 296266
+: Subset size: 298907
+@@@@@@@ Job 1: Local miki: [commons]
+@@@@@@@ Job 1: Progress Time: 1.473027052 seconds.
+@@@@@@@ Job 1: Local miki: [settlement]
+@@@@@@@ Job 1: Progress Time: 1.546818789 seconds.
+@@@@@@@ Job 1: Local miki: [refer, commons]
+@@@@@@@ Job 1: Progress Time: 2.316444107 seconds.
+@@@@@@@ Job 1: Local miki: [refer, settlement]
+@@@@@@@ Job 1: Progress Time: 2.401873644 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, commons]
+@@@@@@@ Job 1: Progress Time: 3.447144581 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, settlement]
+@@@@@@@ Job 1: Progress Time: 3.547069659 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, list, commons]
+@@@@@@@ Job 1: Progress Time: 4.534752433 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, list, settlement]
+@@@@@@@ Job 1: Progress Time: 4.62743418 seconds.
+@@@@@@@ Job 1: Global miki: ([county, list, refer, commons, settlement],0.7625534369882359)
+@@@@@@@ Job 1: Missing candidates: 50
+@@@@@@@ Job 1: Elapsed Time: 11.872199226 seconds.
+@@@@@@@ Job 2: Global miki: ([county, green, list, refer, settlement],0.6719201227539906)
+@@@@@@@ Job 2: Elapsed Time: 18.850996282 seconds.
+@@@@@@@ Final miki: ([county, list, refer, commons, settlement],0.7625534369882359)
+Training data: 595173
+Training total partitions: 2
+Feature list size: 9189
+@@@@@@@@@@@@@@@ Output ##################
+: Subset size: 296266
+: Subset size: 298907
+@@@@@@@ Job 1: Local miki: [commons]
+@@@@@@@ Job 1: Progress Time: 1.53445794 seconds.
+@@@@@@@ Job 1: Local miki: [settlement]
+@@@@@@@ Job 1: Progress Time: 1.647870328 seconds.
+@@@@@@@ Job 1: Local miki: [refer, commons]
+@@@@@@@ Job 1: Progress Time: 2.699212196 seconds.
+@@@@@@@ Job 1: Local miki: [refer, settlement]
+@@@@@@@ Job 1: Progress Time: 2.793749394 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, commons]
+@@@@@@@ Job 1: Progress Time: 3.897512253 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, settlement]
+@@@@@@@ Job 1: Progress Time: 3.962598571 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, list, commons]
+@@@@@@@ Job 1: Progress Time: 4.986429286 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, list, settlement]
+@@@@@@@ Job 1: Progress Time: 5.097243061 seconds.
+@@@@@@@ Job 1: Local miki: [refer, person, county, list, commons]
+@@@@@@@ Job 1: Progress Time: 6.343647097 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, british, list, settlement]
+@@@@@@@ Job 1: Progress Time: 6.516613411 seconds.
+@@@@@@@ Job 1: Global miki: Empty
+@@@@@@@ Job 1: Missing candidates: 60
+@@@@@@@ Job 1: Elapsed Time: 15.68421634 seconds.
+@@@@@@@ Job 2: Global miki: ([county, british, list, title, refer, settlement],0.8604730797407222)
+@@@@@@@ Job 2: Elapsed Time: 26.244660698 seconds.
+@@@@@@@ Final miki: ([county, british, list, title, refer, settlement],0.8604730797407222)
+Training data: 595173
+Training total partitions: 2
+Feature list size: 9189
+@@@@@@@@@@@@@@@ Output ##################
+: Subset size: 296266
+: Subset size: 298907
+@@@@@@@ Job 1: Local miki: [settlement]
+@@@@@@@ Job 1: Progress Time: 1.45953162 seconds.
+@@@@@@@ Job 1: Local miki: [commons]
+@@@@@@@ Job 1: Progress Time: 1.496678823 seconds.
+@@@@@@@ Job 1: Local miki: [refer, settlement]
+@@@@@@@ Job 1: Progress Time: 2.36961983 seconds.
+@@@@@@@ Job 1: Local miki: [refer, commons]
+@@@@@@@ Job 1: Progress Time: 2.460656503 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, settlement]
+@@@@@@@ Job 1: Progress Time: 3.412910816 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, commons]
+@@@@@@@ Job 1: Progress Time: 3.511351886 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, list, settlement]
+@@@@@@@ Job 1: Progress Time: 4.492745481 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, list, commons]
+@@@@@@@ Job 1: Progress Time: 4.591460224 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, british, list, settlement]
+@@@@@@@ Job 1: Progress Time: 5.441544167 seconds.
+@@@@@@@ Job 1: Local miki: [refer, person, county, list, commons]
+@@@@@@@ Job 1: Progress Time: 5.551415511 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, british, list, title, settlement]
+@@@@@@@ Job 1: Progress Time: 6.827492087 seconds.
+@@@@@@@ Job 1: Local miki: [refer, person, county, british, list, commons]
+@@@@@@@ Job 1: Progress Time: 6.94431147 seconds.
+@@@@@@@ Job 1: Global miki: Empty
+@@@@@@@ Job 1: Missing candidates: 70
+@@@@@@@ Job 1: Elapsed Time: 20.332164533 seconds.
+@@@@@@@ Job 2: Global miki: ([refer, county, british, list, title, park, settlement],0.8872410884539408)
+@@@@@@@ Job 2: Elapsed Time: 31.148164165 seconds.
+@@@@@@@ Final miki: ([refer, county, british, list, title, park, settlement],0.8872410884539408)
+Training data: 595173
+Training total partitions: 2
+Feature list size: 9189
+@@@@@@@@@@@@@@@ Output ##################
+: Subset size: 296266
+: Subset size: 298907
+@@@@@@@ Job 1: Local miki: [commons]
+@@@@@@@ Job 1: Progress Time: 1.687365493 seconds.
+@@@@@@@ Job 1: Local miki: [settlement]
+@@@@@@@ Job 1: Progress Time: 1.795553598 seconds.
+@@@@@@@ Job 1: Local miki: [refer, commons]
+@@@@@@@ Job 1: Progress Time: 2.54067188 seconds.
+@@@@@@@ Job 1: Local miki: [refer, settlement]
+@@@@@@@ Job 1: Progress Time: 2.685295587 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, commons]
+@@@@@@@ Job 1: Progress Time: 3.687545236 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, settlement]
+@@@@@@@ Job 1: Progress Time: 3.816174094 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, list, commons]
+@@@@@@@ Job 1: Progress Time: 4.765645163 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, list, settlement]
+@@@@@@@ Job 1: Progress Time: 4.920844994 seconds.
+@@@@@@@ Job 1: Local miki: [refer, person, county, list, commons]
+@@@@@@@ Job 1: Progress Time: 5.79435544 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, british, list, settlement]
+@@@@@@@ Job 1: Progress Time: 5.883092114 seconds.
+@@@@@@@ Job 1: Local miki: [refer, person, county, british, list, commons]
+@@@@@@@ Job 1: Progress Time: 7.19536241 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, british, list, title, settlement]
+@@@@@@@ Job 1: Progress Time: 7.243164032 seconds.
+@@@@@@@ Job 1: Local miki: [refer, person, county, british, list, title, commons]
+@@@@@@@ Job 1: Progress Time: 9.644268567 seconds.
+@@@@@@@ Job 1: Local miki: [refer, person, county, british, list, title, settlement]
+@@@@@@@ Job 1: Progress Time: 9.666767504 seconds.
+@@@@@@@ Job 1: Global miki: ([refer, person, county, british, list, title, commons, settlement],1.060203822479443)
+@@@@@@@ Job 1: Missing candidates: 80
+@@@@@@@ Job 1: Elapsed Time: 29.196834966 seconds.
+@@@@@@@ Job 2: Global miki: ([white, refer, person, county, british, list, title, settlement],0.9709166752815852)
+@@@@@@@ Job 2: Elapsed Time: 40.511494638 seconds.
+@@@@@@@ Final miki: ([refer, person, county, british, list, title, commons, settlement],1.060203822479443)
+Training data: 595173
+Training total partitions: 2
+Feature list size: 9189
+@@@@@@@@@@@@@@@ Output ##################
+: Subset size: 296266
+: Subset size: 298907
+@@@@@@@ Job 1: Local miki: [settlement]
+@@@@@@@ Job 1: Progress Time: 1.456988377 seconds.
+@@@@@@@ Job 1: Local miki: [commons]
+@@@@@@@ Job 1: Progress Time: 1.472053281 seconds.
+@@@@@@@ Job 1: Local miki: [refer, settlement]
+@@@@@@@ Job 1: Progress Time: 2.290112756 seconds.
+@@@@@@@ Job 1: Local miki: [refer, commons]
+@@@@@@@ Job 1: Progress Time: 2.31451054 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, settlement]
+@@@@@@@ Job 1: Progress Time: 3.427294712 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, commons]
+@@@@@@@ Job 1: Progress Time: 3.481209999 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, list, settlement]
+@@@@@@@ Job 1: Progress Time: 4.474320489 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, list, commons]
+@@@@@@@ Job 1: Progress Time: 4.530472083 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, british, list, settlement]
+@@@@@@@ Job 1: Progress Time: 5.404694987 seconds.
+@@@@@@@ Job 1: Local miki: [refer, person, county, list, commons]
+@@@@@@@ Job 1: Progress Time: 5.477361179 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, british, list, title, settlement]
+@@@@@@@ Job 1: Progress Time: 6.767427668 seconds.
+@@@@@@@ Job 1: Local miki: [refer, person, county, british, list, commons]
+@@@@@@@ Job 1: Progress Time: 6.867920124 seconds.
+@@@@@@@ Job 1: Local miki: [refer, person, county, british, list, title, settlement]
+@@@@@@@ Job 1: Progress Time: 8.893239808 seconds.
+@@@@@@@ Job 1: Local miki: [refer, person, county, british, list, title, commons]
+@@@@@@@ Job 1: Progress Time: 9.113104998 seconds.
+@@@@@@@ Job 1: Local miki: [refer, united, person, county, british, list, title, settlement]
+@@@@@@@ Job 1: Progress Time: 13.353498906 seconds.
+@@@@@@@ Job 1: Local miki: [refer, united, person, county, british, list, title, commons]
+@@@@@@@ Job 1: Progress Time: 14.041497705 seconds.
+@@@@@@@ Job 1: Global miki: ([refer, united, person, county, british, list, title, commons, settlement],1.1437450096259683)
+@@@@@@@ Job 1: Missing candidates: 90
+@@@@@@@ Job 1: Elapsed Time: 42.934789223 seconds.
+@@@@@@@ Job 2: Global miki: ([refer, united, person, county, ship, british, list, title, settlement],1.0704386646030444)
+@@@@@@@ Job 2: Elapsed Time: 58.16140079 seconds.
+@@@@@@@ Final miki: ([refer, united, person, county, british, list, title, commons, settlement],1.1437450096259683)
+Training data: 595173
+Training total partitions: 2
+Feature list size: 9189
+@@@@@@@@@@@@@@@ Output ##################
+: Subset size: 296266
+: Subset size: 298907
+@@@@@@@ Job 1: Local miki: [settlement]
+@@@@@@@ Job 1: Progress Time: 1.443308547 seconds.
+@@@@@@@ Job 1: Local miki: [commons]
+@@@@@@@ Job 1: Progress Time: 1.62008104 seconds.
+@@@@@@@ Job 1: Local miki: [refer, settlement]
+@@@@@@@ Job 1: Progress Time: 2.360539653 seconds.
+@@@@@@@ Job 1: Local miki: [refer, commons]
+@@@@@@@ Job 1: Progress Time: 2.685325111 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, settlement]
+@@@@@@@ Job 1: Progress Time: 3.558243217 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, commons]
+@@@@@@@ Job 1: Progress Time: 3.762519412 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, list, settlement]
+@@@@@@@ Job 1: Progress Time: 4.435721971 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, list, commons]
+@@@@@@@ Job 1: Progress Time: 4.815394948 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, british, list, settlement]
+@@@@@@@ Job 1: Progress Time: 5.518445798 seconds.
+@@@@@@@ Job 1: Local miki: [refer, person, county, list, commons]
+@@@@@@@ Job 1: Progress Time: 5.774909358 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, british, list, title, settlement]
+@@@@@@@ Job 1: Progress Time: 6.87691217 seconds.
+@@@@@@@ Job 1: Local miki: [refer, person, county, british, list, commons]
+@@@@@@@ Job 1: Progress Time: 7.512047107 seconds.
+@@@@@@@ Job 1: Local miki: [refer, person, county, british, list, title, settlement]
+@@@@@@@ Job 1: Progress Time: 9.29970097 seconds.
+@@@@@@@ Job 1: Local miki: [refer, person, county, british, list, title, commons]
+@@@@@@@ Job 1: Progress Time: 9.885509795 seconds.
+@@@@@@@ Job 1: Local miki: [refer, united, person, county, british, list, title, settlement]
+@@@@@@@ Job 1: Progress Time: 13.417811355 seconds.
+@@@@@@@ Job 1: Local miki: [refer, united, person, county, british, list, title, commons]
+@@@@@@@ Job 1: Progress Time: 14.646821098 seconds.
+@@@@@@@ Job 1: Local miki: [refer, united, year, person, county, british, list, title, settlement]
+@@@@@@@ Job 1: Progress Time: 21.564894786 seconds.
+@@@@@@@ Job 1: Local miki: [refer, united, person, county, british, list, title, category, commons]
+@@@@@@@ Job 1: Progress Time: 22.234452942 seconds.
+@@@@@@@ Job 1: Global miki: Empty
+@@@@@@@ Job 1: Missing candidates: 100
+@@@@@@@ Job 1: Elapsed Time: 73.609561256 seconds.
+@@@@@@@ Job 2: Global miki: ([von, refer, united, year, person, county, british, list, title, settlement],1.107139040704857)
+@@@@@@@ Job 2: Elapsed Time: 91.943631231 seconds.
+@@@@@@@ Final miki: ([von, refer, united, year, person, county, british, list, title, settlement],1.107139040704857)
+Training data: 595173
+Training total partitions: 2
+Feature list size: 9189
+@@@@@@@@@@@@@@@ Output ##################
+: Subset size: 296266
+: Subset size: 298907
+@@@@@@@ Job 1: Local miki: [settlement]
+@@@@@@@ Job 1: Progress Time: 1.440067498 seconds.
+@@@@@@@ Job 1: Local miki: [commons]
+@@@@@@@ Job 1: Progress Time: 1.534537234 seconds.
+@@@@@@@ Job 1: Local miki: [refer, settlement]
+@@@@@@@ Job 1: Progress Time: 2.281045671 seconds.
+@@@@@@@ Job 1: Local miki: [refer, commons]
+@@@@@@@ Job 1: Progress Time: 2.419069714 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, settlement]
+@@@@@@@ Job 1: Progress Time: 3.49645224 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, commons]
+@@@@@@@ Job 1: Progress Time: 3.541916075 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, list, settlement]
+@@@@@@@ Job 1: Progress Time: 4.553158989 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, list, commons]
+@@@@@@@ Job 1: Progress Time: 4.60612226 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, british, list, settlement]
+@@@@@@@ Job 1: Progress Time: 5.546685041 seconds.
+@@@@@@@ Job 1: Local miki: [refer, person, county, list, commons]
+@@@@@@@ Job 1: Progress Time: 5.608264957 seconds.
+@@@@@@@ Job 1: Local miki: [refer, person, county, british, list, commons]
+@@@@@@@ Job 1: Progress Time: 6.964286911 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, british, list, title, settlement]
+@@@@@@@ Job 1: Progress Time: 6.974251783 seconds.
+@@@@@@@ Job 1: Local miki: [refer, person, county, british, list, title, settlement]
+@@@@@@@ Job 1: Progress Time: 9.121314544 seconds.
+@@@@@@@ Job 1: Local miki: [refer, person, county, british, list, title, commons]
+@@@@@@@ Job 1: Progress Time: 9.163573995 seconds.
+@@@@@@@ Job 1: Local miki: [refer, united, person, county, british, list, title, settlement]
+@@@@@@@ Job 1: Progress Time: 12.904888053 seconds.
+@@@@@@@ Job 1: Local miki: [refer, united, person, county, british, list, title, commons]
+@@@@@@@ Job 1: Progress Time: 12.98452918 seconds.
+@@@@@@@ Job 1: Local miki: [refer, united, year, person, county, british, list, title, settlement]
+@@@@@@@ Job 1: Progress Time: 20.677458048 seconds.
+@@@@@@@ Job 1: Local miki: [refer, united, person, county, british, list, title, category, commons]
+@@@@@@@ Job 1: Progress Time: 20.894770766 seconds.
+@@@@@@@ Job 1: Local miki: [refer, united, year, person, county, multiple, british, list, title, settlement]
+@@@@@@@ Job 1: Progress Time: 47.009035166 seconds.
+@@@@@@@ Job 1: Local miki: [refer, united, person, album, county, british, list, title, category, commons]
+@@@@@@@ Job 1: Progress Time: 47.037557733 seconds.

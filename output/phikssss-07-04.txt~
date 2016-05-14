@@ -1,0 +1,33 @@
+Dataset path: file:///home/ddoan/Projects/java/miki-mining/datasets/cleaned_wiki_articles_07.txt
+Training data: 787104
+Training total partitions: 2
+Feature list size: 9242
+@@@@@@@@@@@@@@@ Output ##################
+: Subset size: 391594
+: Subset size: 395510
+@@@@@@@@ Local miki entropy: 0.16382581386052386
+@@@@@@@ Job 1: Local miki: [commons]
+@@@@@@@ Job 1: Progress Time: 1.726652405 seconds.
+@@@@@@@@ Local miki entropy: 0.2989023845797479
+@@@@@@@ Job 1: Local miki: [settlement]
+@@@@@@@ Job 1: Progress Time: 1.772265571 seconds.
+@@@@@@@@ Local miki entropy: 0.3220942354966736
+@@@@@@@ Job 1: Local miki: [refer, commons]
+@@@@@@@ Job 1: Progress Time: 3.179524788 seconds.
+@@@@@@@@ Local miki entropy: 0.4630909155360078
+@@@@@@@ Job 1: Local miki: [refer, settlement]
+@@@@@@@ Job 1: Progress Time: 3.254860483 seconds.
+@@@@@@@@ Local miki entropy: 0.4411962107620311
+@@@@@@@ Job 1: Local miki: [refer, list, commons]
+@@@@@@@ Job 1: Progress Time: 4.682820509 seconds.
+@@@@@@@@ Local miki entropy: 0.611779735927371
+@@@@@@@ Job 1: Local miki: [refer, county, settlement]
+@@@@@@@ Job 1: Progress Time: 4.713904528 seconds.
+@@@@ After emit projections time: 5.844323774
+@@@@ After emit projections time: 5.915095559
+@@@@@@@ Job 1: Global miki: Empty
+@@@@@@@ Job 1: Missing candidates: 4
+@@@@@@@ Job 1: Elapsed Time: 10.20814293 seconds.
+@@@@@@@ Job 2: Global miki: ([county, fg, refer, settlement],0.4881139523414563)
+@@@@@@@ Job 2: Elapsed Time: 11.195116198 seconds.
+@@@@@@@ Final miki: ([county, fg, refer, settlement],0.4881139523414563)

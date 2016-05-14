@@ -1,0 +1,443 @@
+@@@@@@@@@@@@@@@ Output ##################
+Training data: 787104
+Training total partitions: 2
+Feature list size: 9242
+: Subset size: 391594
+: Subset size: 395510
+@@@@@@@ Job 1: Global miki: ([settlement],0.20175255850288118)
+@@@@@@@ Job 1: Elapsed Time: 3.572147487 seconds.
+@@@@@@@@@@@@@@@ Output ##################
+Training data: 787104
+Training total partitions: 2
+Feature list size: 9242
+: Subset size: 395510
+: Subset size: 391594
+@@@@@@@@ Local miki entropy: 0.2989023845797479
+@@@@@@@ Job 1: Local miki: [settlement]
+@@@@@@@ Job 1: Progress Time: 1.927303327 seconds.
+@@@@@@@@ Local miki entropy: 0.16382581386052386
+@@@@@@@ Job 1: Local miki: [commons]
+@@@@@@@ Job 1: Progress Time: 2.004741327 seconds.
+@@@@@@@ Job 1: Global miki: ([commons, settlement],0.3133599992084912)
+@@@@@@@ Job 1: Elapsed Time: 6.769364424 seconds.
+@@@@@@@ Job 2: Global miki: ([refer, settlement],0.3636060234115087)
+@@@@@@@ Job 2: Elapsed Time: 7.642915216 seconds.
+@@@@@@@ Final miki: ([refer, settlement],0.3636060234115087)
+@@@@@@@@@@@@@@@ Output ##################
+Training data: 787104
+Training total partitions: 2
+Feature list size: 9242
+: Subset size: 395510
+: Subset size: 391594
+@@@@@@@@ Local miki entropy: 0.2989023845797479
+@@@@@@@ Job 1: Local miki: [settlement]
+@@@@@@@ Job 1: Progress Time: 1.738913167 seconds.
+@@@@@@@@ Local miki entropy: 0.16382581386052386
+@@@@@@@ Job 1: Local miki: [commons]
+@@@@@@@ Job 1: Progress Time: 1.796119366 seconds.
+@@@@@@@@ Local miki entropy: 0.4630909155360078
+@@@@@@@ Job 1: Local miki: [refer, settlement]
+@@@@@@@ Job 1: Progress Time: 3.086914135 seconds.
+@@@@@@@@ Local miki entropy: 0.3220942354966736
+@@@@@@@ Job 1: Local miki: [refer, commons]
+@@@@@@@ Job 1: Progress Time: 3.222010804 seconds.
+@@@@@@@ Job 1: Global miki: ([refer, commons, settlement],0.47424376689126774)
+@@@@@@@ Job 1: Elapsed Time: 8.845203811 seconds.
+@@@@@@@ Job 2: Global miki: ([county, refer, settlement],0.48798834466922636)
+@@@@@@@ Job 2: Elapsed Time: 10.126277755 seconds.
+@@@@@@@ Final miki: ([county, refer, settlement],0.48798834466922636)
+@@@@@@@@@@@@@@@ Output ##################
+Training data: 787104
+Training total partitions: 2
+Feature list size: 9242
+: Subset size: 391594
+: Subset size: 395510
+@@@@@@@@ Local miki entropy: 0.2989023845797479
+@@@@@@@ Job 1: Local miki: [settlement]
+@@@@@@@ Job 1: Progress Time: 1.848511999 seconds.
+@@@@@@@@ Local miki entropy: 0.16382581386052386
+@@@@@@@ Job 1: Local miki: [commons]
+@@@@@@@ Job 1: Progress Time: 1.941420506 seconds.
+@@@@@@@@ Local miki entropy: 0.4630909155360078
+@@@@@@@ Job 1: Local miki: [refer, settlement]
+@@@@@@@ Job 1: Progress Time: 3.172363819 seconds.
+@@@@@@@@ Local miki entropy: 0.3220942354966736
+@@@@@@@ Job 1: Local miki: [refer, commons]
+@@@@@@@ Job 1: Progress Time: 3.412171481 seconds.
+@@@@@@@@ Local miki entropy: 0.611779735927371
+@@@@@@@ Job 1: Local miki: [refer, county, settlement]
+@@@@@@@ Job 1: Progress Time: 4.367705505 seconds.
+@@@@@@@@ Local miki entropy: 0.4411962107620311
+@@@@@@@ Job 1: Local miki: [refer, list, commons]
+@@@@@@@ Job 1: Progress Time: 4.786430946 seconds.
+@@@@@@@ Job 1: Global miki: ([consistently, list, refer, commons],-0.5668313045830754)
+@@@@@@@ Job 1: Elapsed Time: 11.359973271 seconds.
+@@@@@@@ Job 2: Global miki: ([county, list, refer, settlement],0.605801377382323)
+@@@@@@@ Job 2: Elapsed Time: 13.676399557 seconds.
+@@@@@@@ Final miki: ([county, list, refer, settlement],0.605801377382323)
+@@@@@@@@@@@@@@@ Output ##################
+Training data: 787104
+Training total partitions: 2
+Feature list size: 9242
+: Subset size: 395510
+: Subset size: 391594
+@@@@@@@@ Local miki entropy: 0.2989023845797479
+@@@@@@@ Job 1: Local miki: [settlement]
+@@@@@@@ Job 1: Progress Time: 1.6796809 seconds.
+@@@@@@@@ Local miki entropy: 0.16382581386052386
+@@@@@@@ Job 1: Local miki: [commons]
+@@@@@@@ Job 1: Progress Time: 1.866813952 seconds.
+@@@@@@@@ Local miki entropy: 0.4630909155360078
+@@@@@@@ Job 1: Local miki: [refer, settlement]
+@@@@@@@ Job 1: Progress Time: 3.108878561 seconds.
+@@@@@@@@ Local miki entropy: 0.3220942354966736
+@@@@@@@ Job 1: Local miki: [refer, commons]
+@@@@@@@ Job 1: Progress Time: 3.377845042 seconds.
+@@@@@@@@ Local miki entropy: 0.611779735927371
+@@@@@@@ Job 1: Local miki: [refer, county, settlement]
+@@@@@@@ Job 1: Progress Time: 4.250398341 seconds.
+@@@@@@@@ Local miki entropy: 0.4411962107620311
+@@@@@@@ Job 1: Local miki: [refer, list, commons]
+@@@@@@@ Job 1: Progress Time: 4.711571729 seconds.
+@@@@@@@@ Local miki entropy: 0.7281766525056532
+@@@@@@@ Job 1: Local miki: [refer, county, list, settlement]
+@@@@@@@ Job 1: Progress Time: 5.522907254 seconds.
+@@@@@@@@ Local miki entropy: 0.5461436736127303
+@@@@@@@ Job 1: Local miki: [refer, person, list, commons]
+@@@@@@@ Job 1: Progress Time: 6.14348272 seconds.
+@@@@@@@ Job 1: Global miki: ([ui, list, refer, person, commons],-0.6190439686878908)
+@@@@@@@ Job 1: Elapsed Time: 15.631342023 seconds.
+@@@@@@@ Job 2: Global miki: ([county, british, list, refer, settlement],0.7069662983618253)
+@@@@@@@ Job 2: Elapsed Time: 17.419314529 seconds.
+@@@@@@@ Final miki: ([county, british, list, refer, settlement],0.7069662983618253)
+@@@@@@@@@@@@@@@ Output ##################
+Training data: 787104
+Training total partitions: 2
+Feature list size: 9242
+: Subset size: 391594
+: Subset size: 395510
+@@@@@@@@ Local miki entropy: 0.2989023845797479
+@@@@@@@ Job 1: Local miki: [settlement]
+@@@@@@@ Job 1: Progress Time: 1.765307314 seconds.
+@@@@@@@@ Local miki entropy: 0.16382581386052386
+@@@@@@@ Job 1: Local miki: [commons]
+@@@@@@@ Job 1: Progress Time: 1.815002125 seconds.
+@@@@@@@@ Local miki entropy: 0.4630909155360078
+@@@@@@@ Job 1: Local miki: [refer, settlement]
+@@@@@@@ Job 1: Progress Time: 3.400021762 seconds.
+@@@@@@@@ Local miki entropy: 0.3220942354966736
+@@@@@@@ Job 1: Local miki: [refer, commons]
+@@@@@@@ Job 1: Progress Time: 3.461123274 seconds.
+@@@@@@@@ Local miki entropy: 0.611779735927371
+@@@@@@@ Job 1: Local miki: [refer, county, settlement]
+@@@@@@@ Job 1: Progress Time: 4.600604748 seconds.
+@@@@@@@@ Local miki entropy: 0.4411962107620311
+@@@@@@@ Job 1: Local miki: [refer, list, commons]
+@@@@@@@ Job 1: Progress Time: 4.997915493 seconds.
+@@@@@@@@ Local miki entropy: 0.7281766525056532
+@@@@@@@ Job 1: Local miki: [refer, county, list, settlement]
+@@@@@@@ Job 1: Progress Time: 6.371303695 seconds.
+@@@@@@@@ Local miki entropy: 0.5461436736127303
+@@@@@@@ Job 1: Local miki: [refer, person, list, commons]
+@@@@@@@ Job 1: Progress Time: 6.636776588 seconds.
+@@@@@@@@ Local miki entropy: 0.8322797400849976
+@@@@@@@ Job 1: Local miki: [refer, county, british, list, settlement]
+@@@@@@@ Job 1: Progress Time: 8.273774024 seconds.
+@@@@@@@@ Local miki entropy: 0.6438823127681782
+@@@@@@@ Job 1: Local miki: [refer, person, british, list, commons]
+@@@@@@@ Job 1: Progress Time: 8.939586695 seconds.
+@@@@@@@ Job 1: Global miki: ([british, list, ht, refer, person, commons],-0.6676701536157255)
+@@@@@@@ Job 1: Elapsed Time: 20.700179761 seconds.
+@@@@@@@ Job 2: Global miki: ([county, british, list, refer, person, settlement],0.807067420065184)
+@@@@@@@ Job 2: Elapsed Time: 23.6150755 seconds.
+@@@@@@@ Final miki: ([county, british, list, refer, person, settlement],0.807067420065184)
+@@@@@@@@@@@@@@@ Output ##################
+Training data: 787104
+Training total partitions: 2
+Feature list size: 9242
+: Subset size: 391594
+: Subset size: 395510
+@@@@@@@@ Local miki entropy: 0.2989023845797479
+@@@@@@@ Job 1: Local miki: [settlement]
+@@@@@@@ Job 1: Progress Time: 1.771301394 seconds.
+@@@@@@@@ Local miki entropy: 0.16382581386052386
+@@@@@@@ Job 1: Local miki: [commons]
+@@@@@@@ Job 1: Progress Time: 1.84732335 seconds.
+@@@@@@@@ Local miki entropy: 0.4630909155360078
+@@@@@@@ Job 1: Local miki: [refer, settlement]
+@@@@@@@ Job 1: Progress Time: 3.096318937 seconds.
+@@@@@@@@ Local miki entropy: 0.3220942354966736
+@@@@@@@ Job 1: Local miki: [refer, commons]
+@@@@@@@ Job 1: Progress Time: 3.245331741 seconds.
+@@@@@@@@ Local miki entropy: 0.611779735927371
+@@@@@@@ Job 1: Local miki: [refer, county, settlement]
+@@@@@@@ Job 1: Progress Time: 4.475525467 seconds.
+@@@@@@@@ Local miki entropy: 0.4411962107620311
+@@@@@@@ Job 1: Local miki: [refer, list, commons]
+@@@@@@@ Job 1: Progress Time: 4.582813072 seconds.
+@@@@@@@@ Local miki entropy: 0.7281766525056532
+@@@@@@@ Job 1: Local miki: [refer, county, list, settlement]
+@@@@@@@ Job 1: Progress Time: 5.596307408 seconds.
+@@@@@@@@ Local miki entropy: 0.5461436736127303
+@@@@@@@ Job 1: Local miki: [refer, person, list, commons]
+@@@@@@@ Job 1: Progress Time: 5.750423329 seconds.
+@@@@@@@@ Local miki entropy: 0.8322797400849976
+@@@@@@@ Job 1: Local miki: [refer, county, british, list, settlement]
+@@@@@@@ Job 1: Progress Time: 6.972589216 seconds.
+@@@@@@@@ Local miki entropy: 0.6438823127681782
+@@@@@@@ Job 1: Local miki: [refer, person, british, list, commons]
+@@@@@@@ Job 1: Progress Time: 7.438391251 seconds.
+@@@@@@@@ Local miki entropy: 0.9307598575630674
+@@@@@@@ Job 1: Local miki: [refer, county, british, list, title, settlement]
+@@@@@@@ Job 1: Progress Time: 9.117477508 seconds.
+@@@@@@@@ Local miki entropy: 0.7390558013253109
+@@@@@@@ Job 1: Local miki: [refer, person, british, list, title, commons]
+@@@@@@@ Job 1: Progress Time: 9.589676033 seconds.
+@@@@@@@ Job 1: Global miki: ([refer, person, british, list, title, waiver, commons],-0.715020144313323)
+@@@@@@@ Job 1: Elapsed Time: 23.54020578 seconds.
+@@@@@@@ Job 2: Global miki: ([refer, person, county, british, list, title, settlement],0.9039687218278415)
+@@@@@@@ Job 2: Elapsed Time: 25.930793745 seconds.
+@@@@@@@ Final miki: ([refer, person, county, british, list, title, settlement],0.9039687218278415)
+@@@@@@@@@@@@@@@ Output ##################
+Training data: 787104
+Training total partitions: 2
+Feature list size: 9242
+: Subset size: 391594
+: Subset size: 395510
+@@@@@@@@ Local miki entropy: 0.2989023845797479
+@@@@@@@ Job 1: Local miki: [settlement]
+@@@@@@@ Job 1: Progress Time: 1.80404119 seconds.
+@@@@@@@@ Local miki entropy: 0.16382581386052386
+@@@@@@@ Job 1: Local miki: [commons]
+@@@@@@@ Job 1: Progress Time: 1.91024095 seconds.
+@@@@@@@@ Local miki entropy: 0.4630909155360078
+@@@@@@@ Job 1: Local miki: [refer, settlement]
+@@@@@@@ Job 1: Progress Time: 3.139755511 seconds.
+@@@@@@@@ Local miki entropy: 0.3220942354966736
+@@@@@@@ Job 1: Local miki: [refer, commons]
+@@@@@@@ Job 1: Progress Time: 3.348954014 seconds.
+@@@@@@@@ Local miki entropy: 0.611779735927371
+@@@@@@@ Job 1: Local miki: [refer, county, settlement]
+@@@@@@@ Job 1: Progress Time: 4.354085206 seconds.
+@@@@@@@@ Local miki entropy: 0.4411962107620311
+@@@@@@@ Job 1: Local miki: [refer, list, commons]
+@@@@@@@ Job 1: Progress Time: 4.754292588 seconds.
+@@@@@@@@ Local miki entropy: 0.7281766525056532
+@@@@@@@ Job 1: Local miki: [refer, county, list, settlement]
+@@@@@@@ Job 1: Progress Time: 5.689294105 seconds.
+@@@@@@@@ Local miki entropy: 0.5461436736127303
+@@@@@@@ Job 1: Local miki: [refer, person, list, commons]
+@@@@@@@ Job 1: Progress Time: 6.176616146 seconds.
+@@@@@@@@ Local miki entropy: 0.8322797400849976
+@@@@@@@ Job 1: Local miki: [refer, county, british, list, settlement]
+@@@@@@@ Job 1: Progress Time: 7.05287107 seconds.
+@@@@@@@@ Local miki entropy: 0.6438823127681782
+@@@@@@@ Job 1: Local miki: [refer, person, british, list, commons]
+@@@@@@@ Job 1: Progress Time: 7.710580275 seconds.
+@@@@@@@@ Local miki entropy: 0.9307598575630674
+@@@@@@@ Job 1: Local miki: [refer, county, british, list, title, settlement]
+@@@@@@@ Job 1: Progress Time: 9.077521561 seconds.
+@@@@@@@@ Local miki entropy: 0.7390558013253109
+@@@@@@@ Job 1: Local miki: [refer, person, british, list, title, commons]
+@@@@@@@ Job 1: Progress Time: 9.47862715 seconds.
+@@@@@@@@ Local miki entropy: 1.0255781892295524
+@@@@@@@ Job 1: Local miki: [refer, person, county, british, list, title, settlement]
+@@@@@@@ Job 1: Progress Time: 11.268400774 seconds.
+@@@@@@@@ Local miki entropy: 0.8276455807902577
+@@@@@@@ Job 1: Local miki: [refer, united, person, british, list, title, commons]
+@@@@@@@ Job 1: Progress Time: 11.670531292 seconds.
+@@@@@@@ Job 1: Global miki: ([arrives, refer, united, person, british, list, title, commons],-0.7590946581003147)
+@@@@@@@ Job 1: Elapsed Time: 34.836595769 seconds.
+@@@@@@@ Job 2: Global miki: ([refer, person, county, british, list, title, commons, settlement],1.0093384302373967)
+@@@@@@@ Job 2: Elapsed Time: 39.415228142 seconds.
+@@@@@@@ Final miki: ([refer, person, county, british, list, title, commons, settlement],1.0093384302373967)
+@@@@@@@@@@@@@@@ Output ##################
+Training data: 787104
+Training total partitions: 2
+Feature list size: 9242
+: Subset size: 391594
+: Subset size: 395510
+@@@@@@@@ Local miki entropy: 0.2989023845797479
+@@@@@@@ Job 1: Local miki: [settlement]
+@@@@@@@ Job 1: Progress Time: 2.118766994 seconds.
+@@@@@@@@ Local miki entropy: 0.16382581386052386
+@@@@@@@ Job 1: Local miki: [commons]
+@@@@@@@ Job 1: Progress Time: 2.137160451 seconds.
+@@@@@@@@ Local miki entropy: 0.4630909155360078
+@@@@@@@ Job 1: Local miki: [refer, settlement]
+@@@@@@@ Job 1: Progress Time: 3.638169665 seconds.
+@@@@@@@@ Local miki entropy: 0.3220942354966736
+@@@@@@@ Job 1: Local miki: [refer, commons]
+@@@@@@@ Job 1: Progress Time: 3.706689425 seconds.
+@@@@@@@@ Local miki entropy: 0.611779735927371
+@@@@@@@ Job 1: Local miki: [refer, county, settlement]
+@@@@@@@ Job 1: Progress Time: 5.44427359 seconds.
+@@@@@@@@ Local miki entropy: 0.4411962107620311
+@@@@@@@ Job 1: Local miki: [refer, list, commons]
+@@@@@@@ Job 1: Progress Time: 5.546492884 seconds.
+@@@@@@@@ Local miki entropy: 0.7281766525056532
+@@@@@@@ Job 1: Local miki: [refer, county, list, settlement]
+@@@@@@@ Job 1: Progress Time: 6.828179809 seconds.
+@@@@@@@@ Local miki entropy: 0.5461436736127303
+@@@@@@@ Job 1: Local miki: [refer, person, list, commons]
+@@@@@@@ Job 1: Progress Time: 6.958604641 seconds.
+@@@@@@@@ Local miki entropy: 0.8322797400849976
+@@@@@@@ Job 1: Local miki: [refer, county, british, list, settlement]
+@@@@@@@ Job 1: Progress Time: 8.216217579 seconds.
+@@@@@@@@ Local miki entropy: 0.6438823127681782
+@@@@@@@ Job 1: Local miki: [refer, person, british, list, commons]
+@@@@@@@ Job 1: Progress Time: 8.659975382 seconds.
+@@@@@@@@ Local miki entropy: 0.9307598575630674
+@@@@@@@ Job 1: Local miki: [refer, county, british, list, title, settlement]
+@@@@@@@ Job 1: Progress Time: 10.12708378 seconds.
+@@@@@@@@ Local miki entropy: 0.7390558013253109
+@@@@@@@ Job 1: Local miki: [refer, person, british, list, title, commons]
+@@@@@@@ Job 1: Progress Time: 10.415442014 seconds.
+@@@@@@@@ Local miki entropy: 1.0255781892295524
+@@@@@@@ Job 1: Local miki: [refer, person, county, british, list, title, settlement]
+@@@@@@@ Job 1: Progress Time: 12.927042001 seconds.
+@@@@@@@@ Local miki entropy: 0.8276455807902577
+@@@@@@@ Job 1: Local miki: [refer, united, person, british, list, title, commons]
+@@@@@@@ Job 1: Progress Time: 13.402788042 seconds.
+@@@@@@@@ Local miki entropy: 1.10748209685276
+@@@@@@@ Job 1: Local miki: [refer, united, person, county, british, list, title, settlement]
+@@@@@@@ Job 1: Progress Time: 18.347418903 seconds.
+@@@@@@@@ Local miki entropy: 0.9148354468434332
+@@@@@@@ Job 1: Local miki: [refer, united, person, county, british, list, title, commons]
+@@@@@@@ Job 1: Progress Time: 18.86922702 seconds.
+@@@@@@@ Job 1: Global miki: ([refer, united, person, county, british, list, title, commons, settlement],1.094486928926188)
+@@@@@@@ Job 1: Elapsed Time: 52.671744439 seconds.
+@@@@@@@ Job 2: Global miki: ([refer, united, person, county, multiple, british, list, title, settlement],1.0612706181527984)
+@@@@@@@ Job 2: Elapsed Time: 55.968590349 seconds.
+@@@@@@@ Final miki: ([refer, united, person, county, british, list, title, commons, settlement],1.094486928926188)
+@@@@@@@@@@@@@@@ Output ##################
+Training data: 787104
+Training total partitions: 2
+Feature list size: 9242
+: Subset size: 395510
+: Subset size: 391594
+@@@@@@@@ Local miki entropy: 0.2989023845797479
+@@@@@@@ Job 1: Local miki: [settlement]
+@@@@@@@ Job 1: Progress Time: 2.010965076 seconds.
+@@@@@@@@ Local miki entropy: 0.16382581386052386
+@@@@@@@ Job 1: Local miki: [commons]
+@@@@@@@ Job 1: Progress Time: 2.179483144 seconds.
+@@@@@@@@ Local miki entropy: 0.4630909155360078
+@@@@@@@ Job 1: Local miki: [refer, settlement]
+@@@@@@@ Job 1: Progress Time: 3.690241586 seconds.
+@@@@@@@@ Local miki entropy: 0.3220942354966736
+@@@@@@@ Job 1: Local miki: [refer, commons]
+@@@@@@@ Job 1: Progress Time: 3.890043662 seconds.
+@@@@@@@@ Local miki entropy: 0.611779735927371
+@@@@@@@ Job 1: Local miki: [refer, county, settlement]
+@@@@@@@ Job 1: Progress Time: 4.89157943 seconds.
+@@@@@@@@ Local miki entropy: 0.4411962107620311
+@@@@@@@ Job 1: Local miki: [refer, list, commons]
+@@@@@@@ Job 1: Progress Time: 5.295116887 seconds.
+@@@@@@@@ Local miki entropy: 0.7281766525056532
+@@@@@@@ Job 1: Local miki: [refer, county, list, settlement]
+@@@@@@@ Job 1: Progress Time: 6.148175413 seconds.
+@@@@@@@@ Local miki entropy: 0.5461436736127303
+@@@@@@@ Job 1: Local miki: [refer, person, list, commons]
+@@@@@@@ Job 1: Progress Time: 6.716418281 seconds.
+@@@@@@@@ Local miki entropy: 0.8322797400849976
+@@@@@@@ Job 1: Local miki: [refer, county, british, list, settlement]
+@@@@@@@ Job 1: Progress Time: 7.509649414 seconds.
+@@@@@@@@ Local miki entropy: 0.6438823127681782
+@@@@@@@ Job 1: Local miki: [refer, person, british, list, commons]
+@@@@@@@ Job 1: Progress Time: 8.366423862 seconds.
+@@@@@@@@ Local miki entropy: 0.9307598575630674
+@@@@@@@ Job 1: Local miki: [refer, county, british, list, title, settlement]
+@@@@@@@ Job 1: Progress Time: 9.64057655 seconds.
+@@@@@@@@ Local miki entropy: 0.7390558013253109
+@@@@@@@ Job 1: Local miki: [refer, person, british, list, title, commons]
+@@@@@@@ Job 1: Progress Time: 10.220048407 seconds.
+@@@@@@@@ Local miki entropy: 1.0255781892295524
+@@@@@@@ Job 1: Local miki: [refer, person, county, british, list, title, settlement]
+@@@@@@@ Job 1: Progress Time: 11.556558328 seconds.
+@@@@@@@@ Local miki entropy: 0.8276455807902577
+@@@@@@@ Job 1: Local miki: [refer, united, person, british, list, title, commons]
+@@@@@@@ Job 1: Progress Time: 12.284479345 seconds.
+@@@@@@@@ Local miki entropy: 1.10748209685276
+@@@@@@@ Job 1: Local miki: [refer, united, person, county, british, list, title, settlement]
+@@@@@@@ Job 1: Progress Time: 15.255106955 seconds.
+@@@@@@@@ Local miki entropy: 0.9148354468434332
+@@@@@@@ Job 1: Local miki: [refer, united, person, county, british, list, title, commons]
+@@@@@@@ Job 1: Progress Time: 16.192707731 seconds.
+@@@@@@@@ Local miki entropy: 1.1823696742520826
+@@@@@@@ Job 1: Local miki: [refer, united, person, county, multiple, british, list, title, settlement]
+@@@@@@@ Job 1: Progress Time: 23.225069574 seconds.
+@@@@@@@@ Local miki entropy: 0.9977424639569217
+@@@@@@@ Job 1: Local miki: [refer, united, person, album, county, british, list, title, commons]
+@@@@@@@ Job 1: Progress Time: 24.054155368 seconds.
+@@@@@@@ Job 1: Global miki: ([refer, united, person, album, pantyhose, county, british, list, title, commons],-0.8437199666577183)
+@@@@@@@ Job 1: Elapsed Time: 77.698087364 seconds.
+@@@@@@@ Job 2: Global miki: ([refer, united, person, county, multiple, british, list, title, commons, settlement],1.166153548181494)
+@@@@@@@ Job 2: Elapsed Time: 81.931331464 seconds.
+@@@@@@@ Final miki: ([refer, united, person, county, multiple, british, list, title, commons, settlement],1.166153548181494)
+@@@@@@@@@@@@@@@ Output ##################
+Training data: 787104
+Training total partitions: 2
+Feature list size: 9242
+: Subset size: 391594
+: Subset size: 395510
+@@@@@@@@ Local miki entropy: 0.2989023845797479
+@@@@@@@ Job 1: Local miki: [settlement]
+@@@@@@@ Job 1: Progress Time: 1.783075497 seconds.
+@@@@@@@@ Local miki entropy: 0.16382581386052386
+@@@@@@@ Job 1: Local miki: [commons]
+@@@@@@@ Job 1: Progress Time: 1.921132504 seconds.
+@@@@@@@@ Local miki entropy: 0.4630909155360078
+@@@@@@@ Job 1: Local miki: [refer, settlement]
+@@@@@@@ Job 1: Progress Time: 3.161342801 seconds.
+@@@@@@@@ Local miki entropy: 0.3220942354966736
+@@@@@@@ Job 1: Local miki: [refer, commons]
+@@@@@@@ Job 1: Progress Time: 3.381372799 seconds.
+@@@@@@@@ Local miki entropy: 0.611779735927371
+@@@@@@@ Job 1: Local miki: [refer, county, settlement]
+@@@@@@@ Job 1: Progress Time: 4.352816925 seconds.
+@@@@@@@@ Local miki entropy: 0.4411962107620311
+@@@@@@@ Job 1: Local miki: [refer, list, commons]
+@@@@@@@ Job 1: Progress Time: 4.768128725 seconds.
+@@@@@@@@ Local miki entropy: 0.7281766525056532
+@@@@@@@ Job 1: Local miki: [refer, county, list, settlement]
+@@@@@@@ Job 1: Progress Time: 5.652078669 seconds.
+@@@@@@@@ Local miki entropy: 0.5461436736127303
+@@@@@@@ Job 1: Local miki: [refer, person, list, commons]
+@@@@@@@ Job 1: Progress Time: 6.189759675 seconds.
+@@@@@@@@ Local miki entropy: 0.8322797400849976
+@@@@@@@ Job 1: Local miki: [refer, county, british, list, settlement]
+@@@@@@@ Job 1: Progress Time: 7.031975361 seconds.
+@@@@@@@@ Local miki entropy: 0.6438823127681782
+@@@@@@@ Job 1: Local miki: [refer, person, british, list, commons]
+@@@@@@@ Job 1: Progress Time: 7.73010092 seconds.
+@@@@@@@@ Local miki entropy: 0.9307598575630674
+@@@@@@@ Job 1: Local miki: [refer, county, british, list, title, settlement]
+@@@@@@@ Job 1: Progress Time: 9.002393917 seconds.
+@@@@@@@@ Local miki entropy: 0.7390558013253109
+@@@@@@@ Job 1: Local miki: [refer, person, british, list, title, commons]
+@@@@@@@ Job 1: Progress Time: 9.512898761 seconds.
+@@@@@@@@ Local miki entropy: 1.0255781892295524
+@@@@@@@ Job 1: Local miki: [refer, person, county, british, list, title, settlement]
+@@@@@@@ Job 1: Progress Time: 11.163977242 seconds.
+@@@@@@@@ Local miki entropy: 0.8276455807902577
+@@@@@@@ Job 1: Local miki: [refer, united, person, british, list, title, commons]
+@@@@@@@ Job 1: Progress Time: 12.139009949 seconds.
+@@@@@@@@ Local miki entropy: 1.10748209685276
+@@@@@@@ Job 1: Local miki: [refer, united, person, county, british, list, title, settlement]
+@@@@@@@ Job 1: Progress Time: 16.600873263 seconds.
+@@@@@@@@ Local miki entropy: 0.9148354468434332
+@@@@@@@ Job 1: Local miki: [refer, united, person, county, british, list, title, commons]
+@@@@@@@ Job 1: Progress Time: 17.552394721 seconds.
+@@@@@@@@ Local miki entropy: 1.1823696742520826
+@@@@@@@ Job 1: Local miki: [refer, united, person, county, multiple, british, list, title, settlement]
+@@@@@@@ Job 1: Progress Time: 26.011811474 seconds.
+@@@@@@@@ Local miki entropy: 0.9977424639569217
+@@@@@@@ Job 1: Local miki: [refer, united, person, album, county, british, list, title, commons]
+@@@@@@@ Job 1: Progress Time: 27.244687532 seconds.
+@@@@@@@@ Local miki entropy: 1.2565887773852606
+@@@@@@@ Job 1: Local miki: [refer, united, person, county, multiple, british, list, title, township, settlement]
+@@@@@@@ Job 1: Progress Time: 49.69066581 seconds.
+@@@@@@@@ Local miki entropy: 1.0662049167745893
+@@@@@@@ Job 1: Local miki: [refer, united, person, album, county, british, list, title, commons, settlement]
+@@@@@@@ Job 1: Progress Time: 50.649980881 seconds.

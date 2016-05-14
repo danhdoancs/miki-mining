@@ -1,0 +1,84 @@
+Dataset path: file:///home/ddoan/Projects/java/miki-mining/datasets/debug_dataset.txt
+Training data: 5
+Training total partitions: 2
+Feature list size: 5
+@@@@@@@@@@@@@@@ Output ##################
+: Subset size: 3
+: Subset size: 2
+@@@@@@@@ Local miki entropy: 0.6365141682948128
+@@@@@@@@ Local miki entropy: 0.6931471805599453
+@@@@@@@ Job 1: Local miki: [P]
+@@@@@@@ Job 1: Local miki: [S]
+@@@@@@@ Job 1: Progress Time: 0.031779658 seconds.
+@@@@@@@ Job 1: Progress Time: 0.031802291 seconds.
+13
+@@@@@@@ Job 1: Global miki: Empty
+@@@@@@@ Job 1: Missing candidates: 0
+@@@@@@@ Job 1: Elapsed Time: 0.037518682 seconds.
+Dataset path: file:///home/ddoan/Projects/java/miki-mining/datasets/debug_dataset.txt
+Training data: 5
+Training total partitions: 2
+Feature list size: 5
+@@@@@@@@@@@@@@@ Output ##################
+: Subset size: 2
+: Subset size: 3
+@@@@@@@@ Local miki entropy: 0.6931471805599453
+@@@@@@@@ Local miki entropy: 0.6365141682948128
+@@@@@@@ Job 1: Local miki: [S]
+@@@@@@@ Job 1: Local miki: [P]
+@@@@@@@ Job 1: Progress Time: 0.034302186 seconds.
+@@@@@@@ Job 1: Progress Time: 0.034336103 seconds.
+13
+: Subset size: 2
+@@@@@@@@ Local miki entropy: 0.6931471805599453
+@@@@@@@ Job 1: Local miki: [S]
+@@@@@@@ Job 1: Progress Time: 0.056585 seconds.
+: Subset size: 3
+@@@@@@@@ Local miki entropy: 0.6365141682948128
+@@@@@@@ Job 1: Local miki: [P]
+@@@@@@@ Job 1: Progress Time: 0.057881452 seconds.
+[((S,[P, S]),1), ((E,[P, E]),1), ((F,[P, F]),1), ((D,[D]),1), ((E,[E]),1), ((E,[P, E]),1), ((F,[P, F]),1), ((P,[P, S]),1), ((F,[F, S]),1), ((P,[P]),1), ((D,[D]),1), ((E,[E]),1), ((F,[F]),1)]
+@@@@@@@ Job 1: Global miki: Empty
+@@@@@@@ Job 1: Missing candidates: 0
+@@@@@@@ Job 1: Elapsed Time: 0.063993364 seconds.
+Dataset path: file:///home/ddoan/Projects/java/miki-mining/datasets/debug_dataset.txt
+Training data: 5
+Training total partitions: 1
+Feature list size: 5
+@@@@@@@@@@@@@@@ Output ##################
+: Subset size: 5
+@@@@@@@@ Local miki entropy: 0.6730116670092565
+@@@@@@@ Job 1: Local miki: [S]
+@@@@@@@ Job 1: Progress Time: 0.028387458 seconds.
+14
+: Subset size: 5
+@@@@@@@@ Local miki entropy: 0.6730116670092565
+@@@@@@@ Job 1: Local miki: [S]
+@@@@@@@ Job 1: Progress Time: 0.049275679 seconds.
+[((P,[P, S]),1), ((E,[E, S]),1), ((F,[F, S]),1), ((D,[D]),1), ((E,[E]),1), ((P,[P]),1), ((E,[E]),1), ((F,[F]),1), ((P,[P, S]),1), ((F,[F, S]),1), ((P,[P]),1), ((D,[D]),1), ((E,[E]),1), ((F,[F]),1)]
+@@@@@@@ Job 1: Global miki: Empty
+@@@@@@@ Job 1: Missing candidates: 0
+@@@@@@@ Job 1: Elapsed Time: 0.056925031 seconds.
+Dataset path: file:///home/ddoan/Projects/java/miki-mining/datasets/debug_dataset.txt
+Training data: 5
+Training total partitions: 1
+Feature list size: 5
+@@@@@@@@@@@@@@@ Output ##################
+: Subset size: 5
+@@@@@@@@ Local miki entropy: 0.6730116670092565
+@@@@@@@ Job 1: Local miki: [S]
+@@@@@@@ Job 1: Progress Time: 0.028718907 seconds.
+14
+: Subset size: 5
+@@@@@@@@ Local miki entropy: 0.6730116670092565
+@@@@@@@ Job 1: Local miki: [S]
+@@@@@@@ Job 1: Progress Time: 0.048681875 seconds.
+[((P,[P, S]),1), ((E,[E, S]),1), ((F,[F, S]),1), ((D,[D]),1), ((E,[E]),1), ((P,[P]),1), ((E,[E]),1), ((F,[F]),1), ((P,[P, S]),1), ((F,[F, S]),1), ((P,[P]),1), ((D,[D]),1), ((E,[E]),1), ((F,[F]),1)]
+: Subset size: 5
+@@@@@@@@ Local miki entropy: 0.6730116670092565
+@@@@@@@ Job 1: Local miki: [S]
+@@@@@@@ Job 1: Progress Time: 0.121870922 seconds.
+[((P,[P, S]),2), ((D,[D]),2), ((E,[E]),3), ((F,[F, S]),2), ((P,[P]),2), ((E,[E, S]),1), ((F,[F]),2)]
+@@@@@@@ Job 1: Global miki: Empty
+@@@@@@@ Job 1: Missing candidates: 0
+@@@@@@@ Job 1: Elapsed Time: 0.189831934 seconds.

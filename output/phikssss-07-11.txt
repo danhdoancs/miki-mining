@@ -1,0 +1,63 @@
+Dataset path: file:///home/ddoan/Projects/java/miki-mining/datasets/cleaned_wiki_articles_07.txt
+Training data: 787104
+Training total partitions: 2
+Feature list size: 9242
+@@@@@@@@@@@@@@@ Output ##################
+: Subset size: 395510
+: Subset size: 391594
+@@@@ After emit projections time: 1.928770515
+@@@@ After emit projections time: 2.020908887
+@@@@@@@ Job 1: Global miki: ([settlement],0.20175255850288118)
+@@@@@@@ Job 1: Missing candidates: 0
+@@@@@@@ Job 1: Chosen missing candidates: 0
+@@@@@@@ Job 1: Elapsed Time: 3.900004445 seconds.
+Dataset path: file:///home/ddoan/Projects/java/miki-mining/datasets/cleaned_wiki_articles_07.txt
+Training data: 787104
+Training total partitions: 2
+Feature list size: 9242
+@@@@@@@@@@@@@@@ Output ##################
+: Subset size: 391594
+: Subset size: 395510
+@@@@@@@@ Local miki entropy: 0.2989023845797479
+@@@@@@@ Job 1: Local miki: [settlement]
+@@@@@@@ Job 1: Progress Time: 1.765442579 seconds.
+@@@@@@@@ Local miki entropy: 0.16382581386052386
+@@@@@@@ Job 1: Local miki: [commons]
+@@@@@@@ Job 1: Progress Time: 1.783581904 seconds.
+@@@@ After emit projections time: 3.172333404
+@@@@ After emit projections time: 3.284143811
+@@@@@@@ Job 1: Global miki: ([commons, settlement],0.3133599992084912)
+@@@@@@@ Job 1: Missing candidates: 18480
+@@@@@@@ Job 1: Chosen missing candidates: 4
+@@@@@@@ Job 1: Elapsed Time: 6.849652363 seconds.
+@@@@@@@ Job 2: Global miki: ([refer, settlement],0.3636060234115087)
+@@@@@@@ Job 2: Elapsed Time: 8.017637575 seconds.
+@@@@@@@ Final miki: ([refer, settlement],0.3636060234115087)
+Dataset path: file:///home/ddoan/Projects/java/miki-mining/datasets/cleaned_wiki_articles_07.txt
+Training data: 787104
+Training total partitions: 2
+Feature list size: 9242
+@@@@@@@@@@@@@@@ Output ##################
+: Subset size: 395510
+: Subset size: 391594
+@@@@@@@@ Local miki entropy: 0.2989023845797479
+@@@@@@@ Job 1: Local miki: [settlement]
+@@@@@@@ Job 1: Progress Time: 1.719730003 seconds.
+@@@@@@@@ Local miki entropy: 0.16382581386052386
+@@@@@@@ Job 1: Local miki: [commons]
+@@@@@@@ Job 1: Progress Time: 1.852645765 seconds.
+@@@@@@@@ Local miki entropy: 0.4630909155360078
+@@@@@@@ Job 1: Local miki: [refer, settlement]
+@@@@@@@ Job 1: Progress Time: 3.176628716 seconds.
+@@@@@@@@ Local miki entropy: 0.3220942354966736
+@@@@@@@ Job 1: Local miki: [refer, commons]
+@@@@@@@ Job 1: Progress Time: 3.431826832 seconds.
+@@@@ After emit projections time: 4.754056872
+@@@@ After emit projections time: 5.084641713
+@@@@@@@ Job 1: Global miki: ([refer, commons, settlement],0.47424376689126774)
+@@@@@@@ Job 1: Missing candidates: 18478
+@@@@@@@ Job 1: Chosen missing candidates: 6
+@@@@@@@ Job 1: Elapsed Time: 8.640685181 seconds.
+@@@@@@@ Job 2: Global miki: ([county, refer, settlement],0.48798834466922636)
+@@@@@@@ Job 2: Elapsed Time: 10.974835714 seconds.
+@@@@@@@ Final miki: ([county, refer, settlement],0.48798834466922636)

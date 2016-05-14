@@ -1,0 +1,65 @@
+@@@@@@@@@@@@@@@ Output ##################
+Training data: 15529
+Training total partitions: 2
+Feature list size: 5542
+: Subset size: 7762
+: Subset size: 7767
+@@@@@@@@ Local miki entropy: 0.17505231813570493
+@@@@@@@ Job 1: Local miki: [refer]
+@@@@@@@ Job 1: Progress Time: 0.25737651 seconds.
+@@@@@@@@ Local miki entropy: 0.16602446345410116
+@@@@@@@ Job 1: Local miki: [refer]
+@@@@@@@ Job 1: Progress Time: 0.267055164 seconds.
+@@@@@@@@ Local miki entropy: 0.29218336442416426
+@@@@@@@ Job 1: Local miki: [refer, british]
+@@@@@@@ Job 1: Progress Time: 0.330552073 seconds.
+@@@@@@@@ Local miki entropy: 0.28089743404722844
+@@@@@@@ Job 1: Local miki: [refer, multiple]
+@@@@@@@ Job 1: Progress Time: 0.341742414 seconds.
+@@@@@@@@ Local miki entropy: 0.40687990947101776
+@@@@@@@ Job 1: Local miki: [refer, multiple, british]
+@@@@@@@ Job 1: Progress Time: 0.440297016 seconds.
+@@@@@@@@ Local miki entropy: 0.39312368813409315
+@@@@@@@ Job 1: Local miki: [refer, multiple, article]
+@@@@@@@ Job 1: Progress Time: 0.449396719 seconds.
+@@@@@@@@ Local miki entropy: 0.509245047696283
+@@@@@@@ Job 1: Local miki: [refer, person, multiple, british]
+@@@@@@@ Job 1: Progress Time: 0.609245985 seconds.
+@@@@@@@@ Local miki entropy: 0.49494437432548116
+@@@@@@@ Job 1: Local miki: [refer, person, multiple, article]
+@@@@@@@ Job 1: Progress Time: 0.622907178 seconds.
+@@@@@@@@ Local miki entropy: 0.610859351078525
+@@@@@@@ Job 1: Local miki: [refer, person, multiple, british, article]
+@@@@@@@ Job 1: Progress Time: 0.8405153 seconds.
+@@@@@@@@ Local miki entropy: 0.5963224766165635
+@@@@@@@ Job 1: Local miki: [refer, person, multiple, british, article]
+@@@@@@@ Job 1: Progress Time: 0.855256649 seconds.
+@@@@@@@@ Local miki entropy: 0.6921280429459982
+@@@@@@@ Job 1: Local miki: [politics, refer, person, multiple, british, article]
+@@@@@@@ Job 1: Progress Time: 1.114386387 seconds.
+@@@@@@@@ Local miki entropy: 0.7031130450013288
+@@@@@@@ Job 1: Local miki: [refer, person, multiple, british, history, article]
+@@@@@@@ Job 1: Progress Time: 1.196355805 seconds.
+@@@@@@@@ Local miki entropy: 0.7848891768071603
+@@@@@@@ Job 1: Local miki: [politics, refer, person, multiple, british, language, article]
+@@@@@@@ Job 1: Progress Time: 1.861554242 seconds.
+@@@@@@@@ Local miki entropy: 0.7892966710603043
+@@@@@@@ Job 1: Local miki: [refer, person, multiple, british, history, film, article]
+@@@@@@@ Job 1: Progress Time: 1.927065881 seconds.
+@@@@@@@@ Local miki entropy: 0.8761396413281354
+@@@@@@@ Job 1: Local miki: [politics, refer, person, christian, multiple, british, language, article]
+@@@@@@@ Job 1: Progress Time: 3.248436436 seconds.
+@@@@@@@@ Local miki entropy: 0.8718445944889005
+@@@@@@@ Job 1: Local miki: [refer, person, multiple, british, language, history, film, article]
+@@@@@@@ Job 1: Progress Time: 3.298565003 seconds.
+@@@@@@@@ Local miki entropy: 0.9601079800179501
+@@@@@@@ Job 1: Local miki: [politics, country, refer, person, christian, multiple, british, language, article]
+@@@@@@@ Job 1: Progress Time: 6.183589172 seconds.
+@@@@@@@@ Local miki entropy: 0.9525818474691465
+@@@@@@@ Job 1: Local miki: [refer, person, multiple, alternative, british, language, history, film, article]
+@@@@@@@ Job 1: Progress Time: 6.245699236 seconds.
+@@@@@@@ Job 1: Global miki: ([refer, keeping, person, multiple, alternative, british, language, history, film, article],-0.8227605327481363)
+@@@@@@@ Job 1: Elapsed Time: 24.655114449 seconds.
+@@@@@@@ Job 2: Global miki: ([politics, country, refer, person, christian, multiple, british, language, film, article],0.9923657870654407)
+@@@@@@@ Job 2: Elapsed Time: 24.994763118 seconds.
+@@@@@@@ Final miki: ([politics, country, refer, person, christian, multiple, british, language, film, article],0.9923657870654407)

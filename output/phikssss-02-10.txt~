@@ -1,0 +1,197 @@
+@@@@@@@@@@@@@@@ Output ##################
+Training data: 46002
+Training total partitions: 2
+Feature list size: 7357
+: Subset size: 23740
+: Subset size: 22262
+@@@@@@@@ Local miki entropy: 0.2124187994731308
+@@@@@@@ Job 1: Local miki: [refer]
+@@@@@@@ Job 1: Progress Time: 0.406140927 seconds.
+@@@@@@@@ Local miki entropy: 0.28563154379439754
+@@@@@@@ Job 1: Local miki: [year]
+@@@@@@@ Job 1: Progress Time: 0.420268464 seconds.
+@@@@@@@@ Local miki entropy: 0.3544313660433964
+@@@@@@@ Job 1: Local miki: [refer, year]
+@@@@@@@ Job 1: Progress Time: 0.578711938 seconds.
+@@@@@@@@ Local miki entropy: 0.4466313813013406
+@@@@@@@ Job 1: Local miki: [year, refer]
+@@@@@@@ Job 1: Progress Time: 0.593380914 seconds.
+@@@@@@@@ Local miki entropy: 0.4719585717271895
+@@@@@@@ Job 1: Local miki: [refer, year, film]
+@@@@@@@ Job 1: Progress Time: 0.775267748 seconds.
+@@@@@@@@ Local miki entropy: 0.5528321091259393
+@@@@@@@ Job 1: Local miki: [year, refer, multiple]
+@@@@@@@ Job 1: Progress Time: 0.775743507 seconds.
+@@@@@@@@ Local miki entropy: 0.6552840301057472
+@@@@@@@ Job 1: Local miki: [year, refer, multiple, british]
+@@@@@@@ Job 1: Progress Time: 0.977690249 seconds.
+@@@@@@@@ Local miki entropy: 0.5818071865627955
+@@@@@@@ Job 1: Local miki: [refer, year, film, list]
+@@@@@@@ Job 1: Progress Time: 1.0159701 seconds.
+@@@@@@@@ Local miki entropy: 0.7547234104256497
+@@@@@@@ Job 1: Local miki: [year, refer, multiple, british, article]
+@@@@@@@ Job 1: Progress Time: 1.212873356 seconds.
+@@@@@@@@ Local miki entropy: 0.6829517745242052
+@@@@@@@ Job 1: Local miki: [greek, refer, year, film, list]
+@@@@@@@ Job 1: Progress Time: 1.284796394 seconds.
+@@@@@@@@ Local miki entropy: 0.8455007245889624
+@@@@@@@ Job 1: Local miki: [year, refer, person, multiple, british, article]
+@@@@@@@ Job 1: Progress Time: 1.732785331 seconds.
+@@@@@@@@ Local miki entropy: 0.7833755318823357
+@@@@@@@ Job 1: Local miki: [greek, refer, year, county, film, list]
+@@@@@@@ Job 1: Progress Time: 1.850787421 seconds.
+@@@@@@@@ Local miki entropy: 0.9200296331134729
+@@@@@@@ Job 1: Local miki: [year, refer, person, multiple, british, film, article]
+@@@@@@@ Job 1: Progress Time: 2.80563794 seconds.
+@@@@@@@@ Local miki entropy: 0.8828620895604686
+@@@@@@@ Job 1: Local miki: [greek, refer, year, county, british, film, list]
+@@@@@@@ Job 1: Progress Time: 2.908644711 seconds.
+@@@@@@@@ Local miki entropy: 0.9910420783537061
+@@@@@@@ Job 1: Local miki: [year, refer, united, person, multiple, british, film, article]
+@@@@@@@ Job 1: Progress Time: 4.749447849 seconds.
+@@@@@@@@ Local miki entropy: 0.9757455393567253
+@@@@@@@ Job 1: Local miki: [greek, refer, year, united, county, british, film, list]
+@@@@@@@ Job 1: Progress Time: 4.82157392 seconds.
+@@@@@@@@ Local miki entropy: 1.061736432434822
+@@@@@@@ Job 1: Local miki: [year, refer, united, person, multiple, british, language, film, article]
+@@@@@@@ Job 1: Progress Time: 11.70037502 seconds.
+@@@@@@@@ Local miki entropy: 1.0661805610472195
+@@@@@@@ Job 1: Local miki: [greek, refer, year, united, county, multiple, british, film, list]
+@@@@@@@ Job 1: Progress Time: 11.817020426 seconds.
+@@@@@@@ Job 1: Global miki: ([year, refer, united, person, multiple, british, language, decisions, film, article],-0.8650540865268324)
+@@@@@@@ Job 1: Elapsed Time: 52.113170372 seconds.
+@@@@@@@ Job 2: Global miki: ([greek, refer, year, united, person, county, multiple, british, film, list],1.0942982584463878)
+@@@@@@@ Job 2: Elapsed Time: 52.9387031 seconds.
+@@@@@@@ Final miki: ([greek, refer, year, united, person, county, multiple, british, film, list],1.0942982584463878)
+@@@@@@@@@@@@@@@ Output ##################
+Training data: 46002
+Training total partitions: 2
+Feature list size: 7357
+: Subset size: 22262
+: Subset size: 23740
+@@@@@@@@ Local miki entropy: 0.28563154379439754
+@@@@@@@ Job 1: Local miki: [year]
+@@@@@@@ Job 1: Progress Time: 0.320355752 seconds.
+@@@@@@@@ Local miki entropy: 0.2124187994731308
+@@@@@@@ Job 1: Local miki: [refer]
+@@@@@@@ Job 1: Progress Time: 0.332485284 seconds.
+@@@@@@@@ Local miki entropy: 0.4466313813013406
+@@@@@@@ Job 1: Local miki: [year, refer]
+@@@@@@@ Job 1: Progress Time: 0.495632921 seconds.
+@@@@@@@@ Local miki entropy: 0.3544313660433964
+@@@@@@@ Job 1: Local miki: [refer, year]
+@@@@@@@ Job 1: Progress Time: 0.501604073 seconds.
+@@@@@@@@ Local miki entropy: 0.4719585717271895
+@@@@@@@ Job 1: Local miki: [refer, year, film]
+@@@@@@@ Job 1: Progress Time: 0.698013727 seconds.
+@@@@@@@@ Local miki entropy: 0.5528321091259393
+@@@@@@@ Job 1: Local miki: [year, refer, multiple]
+@@@@@@@ Job 1: Progress Time: 0.711060972 seconds.
+@@@@@@@@ Local miki entropy: 0.5818071865627955
+@@@@@@@ Job 1: Local miki: [refer, year, film, list]
+@@@@@@@ Job 1: Progress Time: 0.923890873 seconds.
+@@@@@@@@ Local miki entropy: 0.6552840301057472
+@@@@@@@ Job 1: Local miki: [year, refer, multiple, british]
+@@@@@@@ Job 1: Progress Time: 0.924822771 seconds.
+@@@@@@@@ Local miki entropy: 0.7547234104256497
+@@@@@@@ Job 1: Local miki: [year, refer, multiple, british, article]
+@@@@@@@ Job 1: Progress Time: 1.197183542 seconds.
+@@@@@@@@ Local miki entropy: 0.6829517745242052
+@@@@@@@ Job 1: Local miki: [greek, refer, year, film, list]
+@@@@@@@ Job 1: Progress Time: 1.234940429 seconds.
+@@@@@@@@ Local miki entropy: 0.8455007245889624
+@@@@@@@ Job 1: Local miki: [year, refer, person, multiple, british, article]
+@@@@@@@ Job 1: Progress Time: 1.812776033 seconds.
+@@@@@@@@ Local miki entropy: 0.7833755318823357
+@@@@@@@ Job 1: Local miki: [greek, refer, year, county, film, list]
+@@@@@@@ Job 1: Progress Time: 1.923912262 seconds.
+@@@@@@@@ Local miki entropy: 0.9200296331134729
+@@@@@@@ Job 1: Local miki: [year, refer, person, multiple, british, film, article]
+@@@@@@@ Job 1: Progress Time: 2.48569925 seconds.
+@@@@@@@@ Local miki entropy: 0.8828620895604686
+@@@@@@@ Job 1: Local miki: [greek, refer, year, county, british, film, list]
+@@@@@@@ Job 1: Progress Time: 2.553302538 seconds.
+@@@@@@@@ Local miki entropy: 0.9910420783537061
+@@@@@@@ Job 1: Local miki: [year, refer, united, person, multiple, british, film, article]
+@@@@@@@ Job 1: Progress Time: 4.687241977 seconds.
+@@@@@@@@ Local miki entropy: 0.9757455393567253
+@@@@@@@ Job 1: Local miki: [greek, refer, year, united, county, british, film, list]
+@@@@@@@ Job 1: Progress Time: 4.762557443 seconds.
+@@@@@@@@ Local miki entropy: 1.061736432434822
+@@@@@@@ Job 1: Local miki: [year, refer, united, person, multiple, british, language, film, article]
+@@@@@@@ Job 1: Progress Time: 10.005693103 seconds.
+@@@@@@@@ Local miki entropy: 1.0661805610472195
+@@@@@@@ Job 1: Local miki: [greek, refer, year, united, county, multiple, british, film, list]
+@@@@@@@ Job 1: Progress Time: 10.094967689 seconds.
+After reduce frequency: 43.240167998 seconds.
+@@@@@@@ Job 1: Global miki: ([year, refer, united, person, multiple, british, language, decisions, film, article],-0.8650540865268324)
+@@@@@@@ Job 1: Elapsed Time: 55.927684779 seconds.
+@@@@@@@ Job 2: Global miki: ([greek, refer, year, united, person, county, multiple, british, film, list],1.0942982584463878)
+@@@@@@@ Job 2: Elapsed Time: 57.103694833 seconds.
+@@@@@@@ Final miki: ([greek, refer, year, united, person, county, multiple, british, film, list],1.0942982584463878)
+@@@@@@@@@@@@@@@ Output ##################
+Training data: 46002
+Training total partitions: 2
+Feature list size: 7357
+: Subset size: 22262
+: Subset size: 23740
+@@@@@@@@ Local miki entropy: 0.2124187994731308
+@@@@@@@ Job 1: Local miki: [refer]
+@@@@@@@ Job 1: Progress Time: 0.320873244 seconds.
+@@@@@@@@ Local miki entropy: 0.28563154379439754
+@@@@@@@ Job 1: Local miki: [year]
+@@@@@@@ Job 1: Progress Time: 0.34818357 seconds.
+@@@@@@@@ Local miki entropy: 0.3544313660433964
+@@@@@@@ Job 1: Local miki: [refer, year]
+@@@@@@@ Job 1: Progress Time: 0.492541029 seconds.
+@@@@@@@@ Local miki entropy: 0.4466313813013406
+@@@@@@@ Job 1: Local miki: [year, refer]
+@@@@@@@ Job 1: Progress Time: 0.511320123 seconds.
+@@@@@@@@ Local miki entropy: 0.4719585717271895
+@@@@@@@ Job 1: Local miki: [refer, year, film]
+@@@@@@@ Job 1: Progress Time: 0.702052542 seconds.
+@@@@@@@@ Local miki entropy: 0.5528321091259393
+@@@@@@@ Job 1: Local miki: [year, refer, multiple]
+@@@@@@@ Job 1: Progress Time: 0.708129747 seconds.
+@@@@@@@@ Local miki entropy: 0.5818071865627955
+@@@@@@@ Job 1: Local miki: [refer, year, film, list]
+@@@@@@@ Job 1: Progress Time: 0.942458053 seconds.
+@@@@@@@@ Local miki entropy: 0.6552840301057472
+@@@@@@@ Job 1: Local miki: [year, refer, multiple, british]
+@@@@@@@ Job 1: Progress Time: 0.949121712 seconds.
+@@@@@@@@ Local miki entropy: 0.6829517745242052
+@@@@@@@ Job 1: Local miki: [greek, refer, year, film, list]
+@@@@@@@ Job 1: Progress Time: 1.288630058 seconds.
+@@@@@@@@ Local miki entropy: 0.7547234104256497
+@@@@@@@ Job 1: Local miki: [year, refer, multiple, british, article]
+@@@@@@@ Job 1: Progress Time: 1.293184408 seconds.
+@@@@@@@@ Local miki entropy: 0.7833755318823357
+@@@@@@@ Job 1: Local miki: [greek, refer, year, county, film, list]
+@@@@@@@ Job 1: Progress Time: 1.817382855 seconds.
+@@@@@@@@ Local miki entropy: 0.8455007245889624
+@@@@@@@ Job 1: Local miki: [year, refer, person, multiple, british, article]
+@@@@@@@ Job 1: Progress Time: 1.831125439 seconds.
+@@@@@@@@ Local miki entropy: 0.8828620895604686
+@@@@@@@ Job 1: Local miki: [greek, refer, year, county, british, film, list]
+@@@@@@@ Job 1: Progress Time: 2.407544433 seconds.
+@@@@@@@@ Local miki entropy: 0.9200296331134729
+@@@@@@@ Job 1: Local miki: [year, refer, person, multiple, british, film, article]
+@@@@@@@ Job 1: Progress Time: 2.425635346 seconds.
+@@@@@@@@ Local miki entropy: 0.9757455393567253
+@@@@@@@ Job 1: Local miki: [greek, refer, year, united, county, british, film, list]
+@@@@@@@ Job 1: Progress Time: 4.140300809 seconds.
+@@@@@@@@ Local miki entropy: 0.9910420783537061
+@@@@@@@ Job 1: Local miki: [year, refer, united, person, multiple, british, film, article]
+@@@@@@@ Job 1: Progress Time: 4.149393148 seconds.
+@@@@@@@@ Local miki entropy: 1.061736432434822
+@@@@@@@ Job 1: Local miki: [year, refer, united, person, multiple, british, language, film, article]
+@@@@@@@ Job 1: Progress Time: 9.487682656 seconds.
+@@@@@@@@ Local miki entropy: 1.0661805610472195
+@@@@@@@ Job 1: Local miki: [greek, refer, year, united, county, multiple, british, film, list]
+@@@@@@@ Job 1: Progress Time: 9.542454321 seconds.
+After reduce frequency: 42.22997729 seconds.
+@@@@@@@ Job 1: Global miki: ([year, refer, united, person, multiple, british, language, decisions, film, article],-0.8650540865268324)
+@@@@@@@ Job 1: Elapsed Time: 53.60826444 seconds.
+@@@@@@@ Job 2: Global miki: ([greek, refer, year, united, person, county, multiple, british, film, list],1.0942982584463876)
+@@@@@@@ Job 2: Elapsed Time: 55.190253768 seconds.
+@@@@@@@ Final miki: ([greek, refer, year, united, person, county, multiple, british, film, list],1.0942982584463876)

@@ -1,0 +1,17 @@
+Dataset path: file:///home/ddoan/Projects/java/miki-mining/datasets/cleaned_wiki_articles_07.txt
+Training data: 787104
+Training total partitions: 2
+Feature list size: 9242
+@@@@@@@@@@@@@@@ Output ##################
+: Subset size: 391594
+: Subset size: 395510
+@@@@@@@@ Local miki entropy: 0.2989023845797479
+@@@@@@@ Job 1: Local miki: [settlement]
+@@@@@@@ Job 1: Progress Time: 1.980026382 seconds.
+@@@@@@@@ Local miki entropy: 0.16382581386052386
+@@@@@@@ Job 1: Local miki: [commons]
+@@@@@@@ Job 1: Progress Time: 1.990509393 seconds.
+1972031
+@@@@@@@ Job 1: Global miki: Empty
+@@@@@@@ Job 1: Missing candidates: 0
+@@@@@@@ Job 1: Elapsed Time: 2.501885992 seconds.

@@ -1,0 +1,32 @@
+README
+Project: Miki Mining
+Author: Danh Doan
+----------------------------------------------------------------
+
+Source codes: src/main/java
+
+List of classes:
+	- MikiMining: main class for miki mining.
+	- MikiCleaner: main class for miki preprocessing the dataset.
+	- MikiCore: core classes for miki mining. 
+	- SPIKI: SPIKI algorithm for miki mining.
+	- PHIKS: PHIKS algorithm for miki mining.
+
+How to compile:
+	- Using Apache Maven
+	- Need to install Apache Maven first
+	- Command: mvn package
+
+How to run:
+	- Prerequisites: Apache Spark and Hadoop cluster need to be installed first
+	- Task: preprocess raw data
+		+ Command: mvn exec:java -Dexec.mainClass="MikiCleaner" 
+	- Task: miki mining
+		+ Input: 
+			<SparkMasterURL>: 	address of the master node of the cluster
+			<AlgorithmIndex>: 	index of the algorithm want to run. 1 for SPIKI and 2 for PHIKS
+			<DatasetPath>:		path of the dataset file 		
+			<FeatureListPath>:	path of the feature list file
+			<MikiSize>:		size of Miki
+			<OutputFileName>: 	output file name 
+		+ Command: spark-submit --master <SparkMasterURL> --class=MikiMining target/miki-mining-2.0.0.jar <Algorithm_Index> 			<Dataset_Path> <FeatureList_Path> <Miki_Size> >> output/<OutputFileName>

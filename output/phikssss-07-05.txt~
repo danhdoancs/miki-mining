@@ -1,0 +1,29 @@
+Dataset path: file:///home/ddoan/Projects/java/miki-mining/datasets/cleaned_wiki_articles_07.txt
+Training data: 787104
+Training total partitions: 2
+Feature list size: 9242
+@@@@@@@@@@@@@@@ Output ##################
+: Subset size: 395510
+: Subset size: 391594
+@@@@@@@ Job 1: Local miki: [settlement]
+@@@@@@@ Job 1: Progress Time: 2.032650665 seconds.
+@@@@@@@ Job 1: Local miki: [commons]
+@@@@@@@ Job 1: Progress Time: 2.166396124 seconds.
+@@@@@@@ Job 1: Local miki: [refer, settlement]
+@@@@@@@ Job 1: Progress Time: 3.688486444 seconds.
+@@@@@@@ Job 1: Local miki: [refer, commons]
+@@@@@@@ Job 1: Progress Time: 3.895670129 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, settlement]
+@@@@@@@ Job 1: Progress Time: 4.812528171 seconds.
+@@@@@@@ Job 1: Local miki: [refer, list, commons]
+@@@@@@@ Job 1: Progress Time: 5.223610814 seconds.
+@@@@@@@ Job 1: Local miki: [refer, county, list, settlement]
+@@@@@@@ Job 1: Progress Time: 6.077123748 seconds.
+@@@@@@@ Job 1: Local miki: [refer, person, list, commons]
+@@@@@@@ Job 1: Progress Time: 6.665274501 seconds.
+@@@@@@@ Job 1: Global miki: Empty
+@@@@@@@ Job 1: Missing candidates: 5
+@@@@@@@ Job 1: Elapsed Time: 13.378434259 seconds.
+@@@@@@@ Job 2: Global miki: ([county, list, refer, flickr, settlement],0.606105002733273)
+@@@@@@@ Job 2: Elapsed Time: 14.423358038 seconds.
+@@@@@@@ Final miki: ([county, list, refer, flickr, settlement],0.606105002733273)
